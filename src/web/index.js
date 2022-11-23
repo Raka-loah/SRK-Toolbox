@@ -11,7 +11,7 @@ import "./stylesheets/index.js";
 
 // Libs
 import "arrive";
-import "snackbarjs";
+// import "snackbarjs";
 import "bootstrap-material-design/js/index";
 import "bootstrap-colorpicker";
 import moment from "moment-timezone";

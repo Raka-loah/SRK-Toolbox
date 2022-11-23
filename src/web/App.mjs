@@ -13,7 +13,8 @@ import HTMLCategory from "./HTMLCategory.mjs";
 import HTMLOperation from "./HTMLOperation.mjs";
 import Split from "split.js";
 import moment from "moment-timezone";
-
+import toastr from 'toastr';
+import "../../node_modules/toastr/build/toastr.min.css";
 
 /**
  * HTML view for CyberChef responsible for building the web page and dealing with all user
@@ -104,6 +105,25 @@ class App {
 
         this.manager.input.calcMaxTabs();
         this.manager.output.calcMaxTabs();
+
+        toastr.options = {
+            "closeButton": false,
+            "debug": false,
+            "newestOnTop": false,
+            "progressBar": false,
+            "positionClass": "toast-bottom-center",
+            "preventDuplicates": false,
+            "onclick": null,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "5000",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut",
+            "escapeHtml": true
+        }
     }
 
 
@@ -664,14 +684,17 @@ class App {
         log.info("[" + time.toLocaleString() + "] " + str);
         if (silent) return;
 
-        this.currentSnackbar = $.snackbar({
-            content: str,
-            timeout: timeout,
-            htmlAllowed: true,
-            onClose: () => {
-                this.currentSnackbar.remove();
-            }
-        });
+        toastr.options.timeOut = timeout
+        toastr.info(str);
+
+        // this.currentSnackbar = $.snackbar({
+        //     content: str,
+        //     timeout: timeout,
+        //     htmlAllowed: true,
+        //     onClose: () => {
+        //         this.currentSnackbar.remove();
+        //     }
+        // });
     }
 
 

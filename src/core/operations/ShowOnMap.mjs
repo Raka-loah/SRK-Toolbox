@@ -1,6 +1,7 @@
 /**
  * @author j433866 [j433866@gmail.com]
- * @copyright Crown Copyright 2019
+ * @author 0xff1ce [github.com/0xff1ce]
+ * @copyright Crown Copyright 2024
  * @license Apache-2.0
  *
  * Modified by Raka-loah@github for zh-CN i18n
@@ -24,7 +25,7 @@ class ShowOnMap extends Operation {
         this.name = "在地图上显示";
         this.module = "Hashing";
         this.description = "在网页地图上展示坐标位置<br><br>坐标会被转换成度数格式后在地图上显示。<br><br>支持的格式：<ul><li>度分秒 (DMS)</li><li>度分 (DDM)</li><li>度数 (DD)</li><li>Geohash</li><li>军事格网参考系统 (MGRS)</li><li>地形测量局国家格网参考系统 (OSNG)</li><li>通用横轴墨卡托投影 (UTM)</li></ul><br>此操作无法离线使用。";
-        this.infoURL = "https://foundation.wikimedia.org/wiki/Maps_Terms_of_Use";
+        this.infoURL = "https://osmfoundation.org/wiki/Terms_of_Use";
         this.inputType = "string";
         this.outputType = "string";
         this.presentType = "html";
@@ -87,10 +88,10 @@ class ShowOnMap extends Operation {
             data = "0, 0";
         }
         const zoomLevel = args[0];
-        const tileUrl = "https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png",
-            tileAttribution = "<a href=\"https://wikimediafoundation.org/wiki/Maps_Terms_of_Use\">Wikimedia maps</a> | &copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors",
-            leafletUrl = "https://unpkg.com/leaflet@1.5.0/dist/leaflet.js",
-            leafletCssUrl = "https://unpkg.com/leaflet@1.5.0/dist/leaflet.css";
+        const tileUrl = "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+            tileAttribution = "&copy; <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors",
+            leafletUrl = "https://unpkg.com/leaflet@1.9.4/dist/leaflet.js",
+            leafletCssUrl = "https://unpkg.com/leaflet@1.9.4/dist/leaflet.css";
         return `<link rel="stylesheet" href="${leafletCssUrl}" crossorigin=""/>
 <style>
     #output-text .cm-content,

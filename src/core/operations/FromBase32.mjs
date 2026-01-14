@@ -8,6 +8,8 @@
 
 import Operation from "../Operation.mjs";
 import Utils from "../Utils.mjs";
+import {ALPHABET_OPTIONS} from "../lib/Base32.mjs";
+
 
 /**
  * From Base32 operation
@@ -29,8 +31,8 @@ class FromBase32 extends Operation {
         this.args = [
             {
                 name: "可用字符",
-                type: "binaryString",
-                value: "A-Z2-7="
+                type: "editableOption",
+                value: ALPHABET_OPTIONS
             },
             {
                 name: "移除输入中的非可用字符",
@@ -43,6 +45,11 @@ class FromBase32 extends Operation {
                 pattern: "^(?:[A-Z2-7]{8})+(?:[A-Z2-7]{2}={6}|[A-Z2-7]{4}={4}|[A-Z2-7]{5}={3}|[A-Z2-7]{7}={1})?$",
                 flags: "",
                 args: ["A-Z2-7=", false]
+            },
+            {
+                pattern: "^(?:[0-9A-V]{8})+(?:[0-9A-V]{2}={6}|[0-9A-V]{4}={4}|[0-9A-V]{5}={3}|[0-9A-V]{7}={1})?$",
+                flags: "",
+                args: ["0-9A-V=", false]
             }
         ];
     }
@@ -98,3 +105,4 @@ class FromBase32 extends Operation {
 }
 
 export default FromBase32;
+

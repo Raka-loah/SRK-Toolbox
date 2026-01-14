@@ -26,7 +26,7 @@ class VarIntDecode extends Operation {
         this.description = "把VarInt编码的整数进行解码。VarInt是效率较高的编码变长整数的方式，通常用于Protobuf。";
         this.infoURL = "https://developers.google.com/protocol-buffers/docs/encoding#varints";
         this.inputType = "byteArray";
-        this.outputType = "number";
+        this.outputType = "string";
         this.args = [];
     }
 
@@ -37,7 +37,18 @@ class VarIntDecode extends Operation {
      */
     run(input, args) {
         try {
-            return Protobuf.varIntDecode(input);
+            if (typeof BigInt === "function") {
+                let result = BigInt(0);
+                let offset = BigInt(0);
+                for (let i = 0; i < input.length; i++) {
+                    result |= BigInt(input[i] & 0x7f) << offset;
+                    if (!(input[i] & 0x80)) break;
+                    offset += BigInt(7);
+                }
+                return result.toString();
+            } else {
+                return Protobuf.varIntDecode(input).toString();
+            }
         } catch (err) {
             throw new OperationError(err);
         }

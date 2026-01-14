@@ -72,6 +72,8 @@
             "Avro转JSON",
             "CBOR编码",
             "CBOR解码",
+            "YAML to JSON",
+            "JSON to YAML",
             "Caret/M-解码",
             "Rison编码",
             "Rison解码",
@@ -193,7 +195,9 @@
             "解析SSH主机密钥",
             "解析CSR",
             "从证书提取公钥",
-            "从私钥提取公钥"
+            "从私钥提取公钥",
+            "SM2 Encrypt",
+            "SM2 Decrypt"
         ]
     },
     {
@@ -290,6 +294,7 @@
             "转换为大写",
             "转换为小写",
             "大小写互换",
+            "Alternating Caps",
             "转换为大小写不敏感正则",
             "从大小写不敏感正则恢复",
             "添加行号",
@@ -365,11 +370,13 @@
             "正则表达式",
             "XPath表达式",
             "JPath表达式",
+            "Jsonata Query",
             "CSS选择器",
             "提取EXIF",
             "提取ID3",
             "提取文件",
-            "RAKE"
+            "RAKE",
+            "Template"
         ]
     },
     {
@@ -400,6 +407,7 @@
         "name": "哈希",
         "ops": [
             "哈希分析",
+            "Generate all checksums",
             "哈希生成",
             "MD2",
             "MD4",
@@ -418,6 +426,7 @@
             "Snefru",
             "BLAKE2b",
             "BLAKE2s",
+            "BLAKE3",
             "GOST哈希",
             "Streebog",
             "SSDEEP",
@@ -441,10 +450,8 @@
             "Fletcher-64校验和",
             "Adler-32校验和",
             "Luhn校验和",
-            "CRC-8校验和",
-            "CRC-16校验和",
-            "CRC-32校验和",
-            "TCP/IP校验和"
+            "CRC校验和"
+            "XOR校验和"
         ]
     },
     {
@@ -465,8 +472,10 @@
             "CSS压缩",
             "XPath表达式",
             "JPath表达式",
+            "Jq",
             "CSS选择器",
             "PHP反序列化",
+            "PHP Serialize",
             "Microsoft Script解码",
             "移除HTML标签",
             "Diff",
@@ -541,6 +550,7 @@
             "伪随机数生成器",
             "生成德布鲁因序列",
             "生成UUID",
+            "Analyse UUID",
             "生成TOTP",
             "生成HOTP",
             "生成二维码",

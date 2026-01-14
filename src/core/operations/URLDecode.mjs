@@ -25,7 +25,13 @@ class URLDecode extends Operation {
         this.infoURL = "https://wikipedia.org/wiki/Percent-encoding";
         this.inputType = "string";
         this.outputType = "string";
-        this.args = [];
+        this.args = [
+            {
+                "name": "Treat \"+\" as space",
+                "type": "boolean",
+                "value": true
+            },
+        ];
         this.checks = [
             {
                 pattern: ".*(?:%[\\da-f]{2}.*){4}",
@@ -41,7 +47,8 @@ class URLDecode extends Operation {
      * @returns {string}
      */
     run(input, args) {
-        const data = input.replace(/\+/g, "%20");
+        const plusIsSpace = args[0];
+        const data = plusIsSpace ? input.replace(/\+/g, "%20") : input;
         try {
             return decodeURIComponent(data);
         } catch (err) {

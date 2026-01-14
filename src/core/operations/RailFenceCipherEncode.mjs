@@ -68,7 +68,7 @@ class RailFenceCipherEncode extends Operation {
             rows[rowIdx] += plaintext[pos];
         }
 
-        return rows.join("").trim();
+        return rows.join("");
     }
 
 }

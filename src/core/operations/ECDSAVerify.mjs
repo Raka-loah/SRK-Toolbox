@@ -11,6 +11,7 @@ import OperationError from "../errors/OperationError.mjs";
 import { fromBase64 } from "../lib/Base64.mjs";
 import { toHexFast } from "../lib/Hex.mjs";
 import r from "jsrsasign";
+import Utils from "../Utils.mjs";
 
 /**
  * ECDSA Verify operation
@@ -61,6 +62,11 @@ class ECDSAVerify extends Operation {
                 name: "信息",
                 type: "text",
                 value: ""
+            },
+            {
+                name: "Message format",
+                type: "option",
+                value: ["Raw", "Hex", "Base64"]
             }
         ];
     }
@@ -72,7 +78,7 @@ class ECDSAVerify extends Operation {
      */
     run(input, args) {
         let inputFormat = args[0];
-        const [, mdAlgo, keyPem, msg] = args;
+        const [, mdAlgo, keyPem, msg, msgFormat] = args;
 
         if (keyPem.replace("-----BEGIN PUBLIC KEY-----", "").length === 0) {
             throw new OperationError("请输入公钥。");
@@ -147,7 +153,8 @@ class ECDSAVerify extends Operation {
             throw new OperationError("提供的密钥不是公钥。");
         }
         sig.init(key);
-        sig.updateString(msg);
+        const messageStr = Utils.convertToByteString(msg, msgFormat);
+        sig.updateString(messageStr);
         const result = sig.verify(signatureASN1Hex);
         return result ? "验证成功" : "验证失败";
     }

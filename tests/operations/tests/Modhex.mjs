@@ -3,6 +3,8 @@
  * @author linuxgemini [ilteris@asenkron.com.tr]
  * @copyright Crown Copyright 2024
  * @license Apache-2.0
+ *
+ * Modified by Raka-loah@github
  */
 
 import TestRegister from "../../lib/TestRegister.mjs";
@@ -14,9 +16,9 @@ TestRegister.addTests([
         expectedOutput: "hbhdhgidikieifiiikifhj",
         recipeConfig: [
             {
-                "op": "To Modhex",
+                "op": "Modhex编码",
                 "args": [
-                    "None",
+                    "无",
                     0
                 ]
             },
@@ -28,9 +30,9 @@ TestRegister.addTests([
         expectedOutput: "hb:hd:hg:id:ik:ie:if:ii:ik:if:hj",
         recipeConfig: [
             {
-                "op": "To Modhex",
+                "op": "Modhex编码",
                 "args": [
-                    "Colon",
+                    "冒号",
                     0
                 ]
             }
@@ -42,9 +44,9 @@ TestRegister.addTests([
         expectedOutput: "救救孩子",
         recipeConfig: [
             {
-                "op": "From Modhex",
+                "op": "Modhex解码",
                 "args": [
-                    "Auto"
+                    "自动"
                 ]
             }
         ]
@@ -56,9 +58,9 @@ TestRegister.addTests([
         expectedOutput: "救救孩子",
         recipeConfig: [
             {
-                "op": "From Modhex",
+                "op": "Modhex解码",
                 "args": [
-                    "Auto"
+                    "自动"
                 ]
             }
         ]
@@ -79,9 +81,9 @@ dc,ii,hv,ig,hr,hf,dc,he,hj,hv,hv,ie,hg,du",
         expectedOutput: "I saw myself sitting in the crotch of the this fig tree, starving to death, just because I couldn't make up my mind which of the figs I would choose.",
         recipeConfig: [
             {
-                "op": "From Modhex",
+                "op": "Modhex解码",
                 "args": [
-                    "Auto"
+                    "自动"
                 ]
             }
         ]
@@ -102,9 +104,9 @@ dc%ii%hv%ig%hr%hf%dc%he%hj%hv%hv%ie%hg%du",
         expectedOutput: "I saw myself sitting in the crotch of the this fig tree, starving to death, just because I couldn't make up my mind which of the figs I would choose.",
         recipeConfig: [
             {
-                "op": "From Modhex",
+                "op": "Modhex解码",
                 "args": [
-                    "Percent"
+                    "百分号"
                 ]
             }
         ]
@@ -125,9 +127,9 @@ dc;ii;hv;ig;hr;hf;dc;he;hj;hv;hv;ie;hg;du",
         expectedOutput: "I saw myself sitting in the crotch of the this fig tree, starving to death, just because I couldn't make up my mind which of the figs I would choose.",
         recipeConfig: [
             {
-                "op": "From Modhex",
+                "op": "Modhex解码",
                 "args": [
-                    "Semi-colon"
+                    "分号"
                 ]
             }
         ]
@@ -139,9 +141,9 @@ dc;ii;hv;ig;hr;hf;dc;he;hj;hv;hv;ie;hg;du",
         expectedOutput: "hb,hd,hg,id,\nik,ie,if,ii,\nik,if,hj",
         recipeConfig: [
             {
-                "op": "To Modhex",
+                "op": "Modhex编码",
                 "args": [
-                    "Comma",
+                    "逗号",
                     4
                 ]
             }

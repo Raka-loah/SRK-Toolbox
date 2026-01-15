@@ -22,7 +22,7 @@ class TCPIPChecksum extends Operation {
 
         this.name = "TCP/IP校验和";
         this.module = "Crypto";
-        this.description = "从输入的原始字节内容计算TCP (Transport Control Protocol)或IP (Internet Protocol)首部的校验和。";
+        this.description = "从输入的原始字节内容计算TCP (Transport Control Protocol)或IP (Internet Protocol)标头的校验和。";
         this.infoURL = "https://wikipedia.org/wiki/IPv4_header_checksum";
         this.inputType = "ArrayBuffer";
         this.outputType = "string";

@@ -24,9 +24,9 @@ class ParseIPv4Header extends Operation {
     constructor() {
         super();
 
-        this.name = "解析IPv4首部";
+        this.name = "解析IPv4标头";
         this.module = "Default";
-        this.description = "输入IPv4首部（Header）数据，此操作对其进行解析，用易于阅读的格式展示各字段信息。";
+        this.description = "输入IPv4标头（Header）数据，此操作对其进行解析，用易于阅读的格式展示各字段信息。";
         this.infoURL = "https://wikipedia.org/wiki/IPv4#Header";
         this.inputType = "string";
         this.outputType = "html";
@@ -75,7 +75,7 @@ class ParseIPv4Header extends Operation {
 
         // Version
         if (version !== 4) {
-            version = version + " (错误：对于IPv4首部，版本值应该为4）";
+            version = version + " (错误：对于IPv4标头，版本值应该为4）";
         }
 
         // IHL
@@ -102,11 +102,11 @@ class ParseIPv4Header extends Operation {
 
         output = `<table class='table table-hover table-sm table-bordered table-nonfluid'><tr><th>字段</th><th>值</th></tr>
 <tr><td>版本</td><td>${version}</td></tr>
-<tr><td>首部长度（IHL）</td><td>${ihl} （${ihl * 4} 字节）</td></tr>
+<tr><td>标头长度（IHL）</td><td>${ihl} （${ihl * 4} 字节）</td></tr>
 <tr><td>区分服务码点（DSCP）</td><td>${dscp}</td></tr>
 <tr><td>显式拥塞通告（ECN）</td><td>${ecn}</td></tr>
 <tr><td>全长</td><td>${length} 字节
-  IP首部： ${ihl * 4} 字节
+  IP标头： ${ihl * 4} 字节
   数据： ${length - ihl * 4} 字节</td></tr>
 <tr><td>标识符</td><td>0x${Utils.hex(identification)} （${identification}）</td></tr>
 <tr><td>标志位</td><td>0x${Utils.hex(flags, 2)}
@@ -116,7 +116,7 @@ class ParseIPv4Header extends Operation {
 <tr><td>分片偏移</td><td>${fragOffset}</td></tr>
 <tr><td>存活时间</td><td>${ttl}</td></tr>
 <tr><td>协议</td><td>${protocol}, ${protocolInfo.protocol} (${protocolInfo.keyword})</td></tr>
-<tr><td>首部检验和</td><td>${checksumResult}</td></tr>
+<tr><td>标头检验和</td><td>${checksumResult}</td></tr>
 <tr><td>源地址</td><td>${ipv4ToStr(srcIP)}</td></tr>
 <tr><td>目的地址</td><td>${ipv4ToStr(dstIP)}</td></tr>`;
 

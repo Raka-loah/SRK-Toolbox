@@ -30,7 +30,7 @@ class RawInflate extends Operation {
 
         this.name = "Raw Inflate";
         this.module = "Compression";
-        this.description = "解压缩使用无头部deflate算法压缩的数据。";
+        this.description = "解压缩使用无标头deflate算法压缩的数据。";
         this.infoURL = "https://wikipedia.org/wiki/DEFLATE";
         this.inputType = "ArrayBuffer";
         this.outputType = "ArrayBuffer";

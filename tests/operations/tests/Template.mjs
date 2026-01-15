@@ -2,6 +2,8 @@
  * @author kendallgoto [k@kgo.to]
  * @copyright Crown Copyright 2025
  * @license Apache-2.0
+ *
+ * Modified by Raka-loah@github for zh-CN i18n
  */
 
 import TestRegister from "../../lib/TestRegister.mjs";
@@ -12,7 +14,7 @@ TestRegister.addTests([
         "expectedOutput": "Hello, world!",
         "recipeConfig": [
             {
-                "op": "Template",
+                "op": "模板渲染",
                 "args": ["Hello, world!"]
             }
         ]
@@ -23,7 +25,7 @@ TestRegister.addTests([
         "expectedOutput": "1 2",
         "recipeConfig": [
             {
-                "op": "Template",
+                "op": "模板渲染",
                 "args": ["{{ one }} {{ two }}"]
             }
         ]
@@ -34,7 +36,7 @@ TestRegister.addTests([
         "expectedOutput": "Name: Someone\nAge: 25\n\nName: Someone Else\nAge: 32\n\n",
         "recipeConfig": [
             {
-                "op": "Template",
+                "op": "模板渲染",
                 "args": ["{{#*inline \"user\"}}\nName: {{ name }}\nAge: {{ age }}\n{{/inline}}\n{{#each users}}\n{{> user}}\n\n{{/each}}"]
             }
         ]
@@ -45,7 +47,7 @@ TestRegister.addTests([
         "expectedOutput": "<script></script>&lt;script&gt;&lt;/script&gt;",
         "recipeConfig": [
             {
-                "op": "Template",
+                "op": "模板渲染",
                 "args": ["<script></script>{{ test }}"]
             }
         ]

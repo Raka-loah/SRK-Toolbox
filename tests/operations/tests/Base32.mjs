@@ -3,6 +3,8 @@
  *
  * @author Peter C-S [petercs@purelymail.com]
  * @license Apache-2.0
+ *
+ * Modified by Raka-loah@github
  */
 
 import TestRegister from "../../lib/TestRegister.mjs";
@@ -46,7 +48,7 @@ TestRegister.addTests([
         expectedOutput: "",
         recipeConfig: [
             {
-                op: "To Base32",
+                op: "Base32编码",
                 args: [ALPHABET_OPTIONS[0].value],
             },
         ],
@@ -57,7 +59,7 @@ TestRegister.addTests([
         expectedOutput: "",
         recipeConfig: [
             {
-                op: "To Base32",
+                op: "Base32编码",
                 args: [ALPHABET_OPTIONS[1].value],
             },
         ],
@@ -68,7 +70,7 @@ TestRegister.addTests([
         expectedOutput: "",
         recipeConfig: [
             {
-                op: "From Base32",
+                op: "Base32解码",
                 args: [ALPHABET_OPTIONS[0].value, false],
             },
         ],
@@ -79,7 +81,7 @@ TestRegister.addTests([
         expectedOutput: "",
         recipeConfig: [
             {
-                op: "From Base32",
+                op: "Base32解码",
                 args: [ALPHABET_OPTIONS[1].value, false],
             },
         ],
@@ -90,7 +92,7 @@ TestRegister.addTests([
         expectedOutput: STANDARD_OUT,
         recipeConfig: [
             {
-                op: "To Base32",
+                op: "Base32编码",
                 args: [ALPHABET_OPTIONS[0].value],
             },
         ],
@@ -101,7 +103,7 @@ TestRegister.addTests([
         expectedOutput: EXTENDED_OUT,
         recipeConfig: [
             {
-                op: "To Base32",
+                op: "Base32编码",
                 args: [ALPHABET_OPTIONS[1].value],
             },
         ],
@@ -112,7 +114,7 @@ TestRegister.addTests([
         expectedOutput: STANDARD_INP,
         recipeConfig: [
             {
-                op: "From Base32",
+                op: "Base32解码",
                 args: [ALPHABET_OPTIONS[0].value, false],
             },
         ],
@@ -123,7 +125,7 @@ TestRegister.addTests([
         expectedOutput: EXTENDED_INP,
         recipeConfig: [
             {
-                op: "From Base32",
+                op: "Base32解码",
                 args: [ALPHABET_OPTIONS[1].value, false],
             },
         ],
@@ -134,7 +136,7 @@ TestRegister.addTests([
         expectedOutput: ALL_BYTES_STANDARD_OUT,
         recipeConfig: [
             {
-                op: "To Base32",
+                op: "Base32编码",
                 args: [ALPHABET_OPTIONS[0].value],
             },
         ],
@@ -145,7 +147,7 @@ TestRegister.addTests([
         expectedOutput: ALL_BYTES_EXTENDED_OUT,
         recipeConfig: [
             {
-                op: "To Base32",
+                op: "Base32编码",
                 args: [ALPHABET_OPTIONS[1].value],
             },
         ],
@@ -156,7 +158,7 @@ TestRegister.addTests([
         expectedOutput: ALL_BYTES,
         recipeConfig: [
             {
-                op: "From Base32",
+                op: "Base32解码",
                 args: [ALPHABET_OPTIONS[0].value, false],
             },
         ],
@@ -167,7 +169,7 @@ TestRegister.addTests([
         expectedOutput: ALL_BYTES,
         recipeConfig: [
             {
-                op: "From Base32",
+                op: "Base32解码",
                 args: [ALPHABET_OPTIONS[1].value, false],
             },
         ],

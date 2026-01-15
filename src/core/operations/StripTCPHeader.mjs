@@ -2,6 +2,8 @@
  * @author c65722 []
  * @copyright Crown Copyright 2024
  * @license Apache-2.0
+ *
+ * Modified by Raka-loah@github for zh-CN i18n
  */
 
 import Operation from "../Operation.mjs";
@@ -19,9 +21,9 @@ class StripTCPHeader extends Operation {
     constructor() {
         super();
 
-        this.name = "Strip TCP header";
+        this.name = "移除TCP标头";
         this.module = "Default";
-        this.description = "Strips the TCP header from a TCP segment, outputting the payload.";
+        this.description = "从TCP段移除TCP标头，只输出载荷。";
         this.infoURL = "https://wikipedia.org/wiki/Transmission_Control_Protocol";
         this.inputType = "ArrayBuffer";
         this.outputType = "ArrayBuffer";
@@ -40,14 +42,14 @@ class StripTCPHeader extends Operation {
 
         const s = new Stream(new Uint8Array(input));
         if (s.length < MIN_HEADER_LEN) {
-            throw new OperationError("Need at least 20 bytes for a TCP Header");
+            throw new OperationError("TCP标头长度至少20字节");
         }
 
         s.moveTo(DATA_OFFSET_OFFSET);
         const dataOffsetWords = s.readBits(DATA_OFFSET_LEN_BITS);
         const dataOffsetBytes = dataOffsetWords * 4;
         if (s.length < dataOffsetBytes) {
-            throw new OperationError("Input length is less than data offset");
+            throw new OperationError("输入长度小于数据偏移量");
         }
 
         s.moveTo(dataOffsetBytes);

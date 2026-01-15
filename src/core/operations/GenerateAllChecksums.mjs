@@ -2,6 +2,8 @@
  * @author r4mos [2k95ljkhg@mozmail.com]
  * @copyright Crown Copyright 2025
  * @license Apache-2.0
+ *
+ * Modified by Raka-loah@github for zh-CN i18n
  */
 
 import Operation from "../Operation.mjs";
@@ -23,22 +25,22 @@ class GenerateAllChecksums extends Operation {
     constructor() {
         super();
 
-        this.name = "Generate all checksums";
+        this.name = "生成所有校验和";
         this.module = "Crypto";
-        this.description = "Generates all available checksums for the input.";
+        this.description = "对给定的输入生成所有支持的校验和。";
         this.infoURL = "https://wikipedia.org/wiki/Checksum";
         this.inputType = "ArrayBuffer";
         this.outputType = "string";
         this.args = [
             {
-                name: "Length (bits)",
+                name: "长度（位）",
                 type: "option",
                 value: [
-                    "All", "3", "4", "5", "6", "7", "8", "10", "11", "12", "13", "14", "15", "16", "17", "21", "24", "30", "31", "32", "40", "64", "82"
+                    "全部", "3", "4", "5", "6", "7", "8", "10", "11", "12", "13", "14", "15", "16", "17", "21", "24", "30", "31", "32", "40", "64", "82"
                 ]
             },
             {
-                name: "Include names",
+                name: "包括名称",
                 type: "boolean",
                 value: true
             },
@@ -240,7 +242,7 @@ class GenerateAllChecksums extends Operation {
         let output = "";
         this.checksums.forEach(checksum => {
             const checksumLength = checksum.name.match(new RegExp("-(\\d{1,2})(\\/|$)"))[1];
-            if (length === "All" || length === checksumLength) {
+            if (length === "全部" || length === checksumLength) {
                 const value = checksum.algo.run(new Uint8Array(input), checksum.params || []);
                 output += includeNames ?
                     `${checksum.name}:${" ".repeat(25-checksum.name.length)}${value}\n`:

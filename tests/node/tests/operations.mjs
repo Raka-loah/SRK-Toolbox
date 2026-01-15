@@ -591,7 +591,7 @@ Top Drawer`, {
     ...[1, 3, 4, 5, 6, 7].map(version => it(`Analyze UUID v${version}`, () => {
         const uuid = chef.generateUUID("", { "version": `v${version}` }).toString();
         const result = chef.analyseUUID(uuid).toString();
-        const expected = `UUID version: ${version}`;
+        const expected = `UUID版本：${version}`;
         assert.strictEqual(result, expected);
     })),
 
@@ -600,7 +600,7 @@ Top Drawer`, {
         assert.ok(uuid);
 
         const analysis = chef.analyseUUID(uuid).toString();
-        assert.strictEqual(analysis, "UUID version: 4");
+        assert.strictEqual(analysis, "UUID版本：4");
     }),
 
     it("Gzip, Gunzip", () => {

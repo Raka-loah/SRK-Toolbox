@@ -5,6 +5,8 @@
 SRK Toolbox沿用CyberChef版本命名方式，此处记录和官方版本不同的版本号与改动记录，未记载此处的版本内容改动同[CyberChef原版改动](https://github.com/gchq/CyberChef/blob/master/CHANGELOG.md)。
 
 ## 详细信息
+### [10.19.5] - 2026-01-15
+- 前一个版本和官方版本同步发生问题导致版本内容不一致，此版本暂时追至原版最新代码以修复bug。
 
 ### [10.15.2] - 2024-04-08
 - 大意了，合并冲突的时候不小心删了一些东西得补回来。
@@ -24,6 +26,7 @@ SRK Toolbox沿用CyberChef版本命名方式，此处记录和官方版本不同
 - 启用Github Actions作为CI，添加docker镜像。
 - 替换SnackbarJS为Toastr。
 
+[10.19.5]: https://github.com/Raka-loah/SRK-Toolbox/releases/tag/v10.15.2
 [10.15.2]: https://github.com/Raka-loah/SRK-Toolbox/releases/tag/v10.15.2
 [10.4.1]: https://github.com/Raka-loah/SRK-Toolbox/releases/tag/v10.4.1
 [9.54.1]: https://github.com/Raka-loah/SRK-Toolbox/releases/tag/v9.54.1

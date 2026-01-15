@@ -2,6 +2,8 @@
  * @author Jon K (jon@ajarsoftware.com)
  * @copyright Crown Copyright 2016
  * @license Apache-2.0
+ *
+ * Modified by Raka-loah@github for zh-CN i18n
  */
 
 import jsonata from "jsonata";
@@ -18,16 +20,16 @@ class JsonataQuery extends Operation {
     constructor() {
         super();
 
-        this.name = "Jsonata Query";
+        this.name = "Jsonata查询";
         this.module = "Code";
         this.description =
-            "Query and transform JSON data with a jsonata query.";
+            "使用Jsonata表达式查询与转换JSON数据。";
         this.infoURL = "https://docs.jsonata.org/overview.html";
         this.inputType = "string";
         this.outputType = "string";
         this.args = [
             {
-                name: "Query",
+                name: "查询",
                 type: "text",
                 value: "string",
             },
@@ -46,7 +48,7 @@ class JsonataQuery extends Operation {
         try {
             jsonObj = JSON.parse(input);
         } catch (err) {
-            throw new OperationError(`Invalid input JSON: ${err.message}`);
+            throw new OperationError(`输入的JSON无效：${err.message}`);
         }
 
         try {
@@ -54,7 +56,7 @@ class JsonataQuery extends Operation {
             result = await expression.evaluate(jsonObj);
         } catch (err) {
             throw new OperationError(
-                `Invalid Jsonata Expression: ${err.message}`
+                `无效的Jsonata表达式：${err.message}`
             );
         }
 

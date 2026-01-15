@@ -2,6 +2,8 @@
  * @author linuxgemini [ilteris@asenkron.com.tr]
  * @copyright Crown Copyright 2024
  * @license Apache-2.0
+ *
+ * Modified by Raka-loah@github
  */
 
 import Utils from "../Utils.mjs";
@@ -126,16 +128,16 @@ export function toModhexFast(data) {
  * // returns [10,20,30]
  * fromModhex("cl:bf:bu", "Colon");
  */
-export function fromModhex(data, delim="Auto", byteLen=2) {
+export function fromModhex(data, delim="自动", byteLen=2) {
     if (byteLen < 1 || Math.round(byteLen) !== byteLen)
-        throw new OperationError("Byte length must be a positive integer");
+        throw new OperationError("字节长度必须为正整数");
 
     // The `.replace(/\s/g, "")` an interesting workaround: Hex "multiline" tests aren't actually
     // multiline. Tests for Modhex fixes that, thus exposing the issue.
     data = data.toLowerCase().replace(/\s/g, "");
 
-    if (delim !== "None") {
-        const delimRegex = delim === "Auto" ? /[^cbdefghijklnrtuv]/gi : Utils.regexRep(delim);
+    if (delim !== "无") {
+        const delimRegex = delim === "自动" ? /[^cbdefghijklnrtuv]/gi : Utils.regexRep(delim);
         data = data.split(delimRegex);
     } else {
         data = [data];
@@ -148,7 +150,7 @@ export function fromModhex(data, delim="Auto", byteLen=2) {
         }
     }
 
-    const output = fromHex(regularHexString, "None", byteLen);
+    const output = fromHex(regularHexString, "无", byteLen);
     return output;
 }
 
@@ -156,10 +158,10 @@ export function fromModhex(data, delim="Auto", byteLen=2) {
 /**
  * To Modhex delimiters.
  */
-export const TO_MODHEX_DELIM_OPTIONS = ["Space", "Percent", "Comma", "Semi-colon", "Colon", "Line feed", "CRLF", "None"];
+export const TO_MODHEX_DELIM_OPTIONS = ["空格", "百分号", "逗号", "分号", "冒号", "换行", "CRLF", "无"];
 
 
 /**
  * From Modhex delimiters.
  */
-export const FROM_MODHEX_DELIM_OPTIONS = ["Auto"].concat(TO_MODHEX_DELIM_OPTIONS);
+export const FROM_MODHEX_DELIM_OPTIONS = ["自动"].concat(TO_MODHEX_DELIM_OPTIONS);

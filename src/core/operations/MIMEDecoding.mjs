@@ -2,6 +2,8 @@
  * @author mshwed [m@ttshwed.com]
  * @copyright Crown Copyright 2019
  * @license Apache-2.0
+ *
+ * Modified by Raka-loah@github
  */
 
 import Operation from "../Operation.mjs";
@@ -22,9 +24,9 @@ class MIMEDecoding extends Operation {
     constructor() {
         super();
 
-        this.name = "MIME Decoding";
+        this.name = "MIME解码";
         this.module = "Default";
-        this.description = "Enables the decoding of MIME message header extensions for non-ASCII text";
+        this.description = "解码RFC2047使用“非ASCII文本扩展”的MIME标头。";
         this.infoURL = "https://tools.ietf.org/html/rfc2047";
         this.inputType = "byteArray";
         this.outputType = "string";
@@ -134,7 +136,7 @@ class MIMEDecoding extends Operation {
             }
         }
 
-        throw new OperationError("Unhandled Charset");
+        throw new OperationError("不支持的字符集");
     }
 
     /**
@@ -149,7 +151,7 @@ class MIMEDecoding extends Operation {
                 decodedWord += " ";
             // Parse hex encoding
             } else if (encodedWord[i] === "=") {
-                if ((i + 2) >= encodedWord.length) throw new OperationError("Incorrectly Encoded Word");
+                if ((i + 2) >= encodedWord.length) throw new OperationError("Q编码错误");
                 const decodedHex = Utils.byteArrayToChars(fromHex(encodedWord.substring(i + 1, i + 3)));
                 decodedWord += decodedHex;
                 i += 2;
@@ -160,7 +162,7 @@ class MIMEDecoding extends Operation {
                 encodedWord[i] === "\t") {
                 decodedWord += encodedWord[i];
             } else {
-                throw new OperationError("Incorrectly Encoded Word");
+                throw new OperationError("Q编码错误");
             }
         }
 

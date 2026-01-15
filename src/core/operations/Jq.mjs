@@ -2,6 +2,8 @@
  * @author zhzy0077 [zhzy0077@hotmail.com]
  * @copyright Crown Copyright 2023
  * @license Apache-2.0
+ *
+ * Modified by Raka-loah@github for zh-CN i18n
  */
 
 import Operation from "../Operation.mjs";
@@ -21,13 +23,13 @@ class Jq extends Operation {
 
         this.name = "Jq";
         this.module = "Jq";
-        this.description = "jq is a lightweight and flexible command-line JSON processor.";
+        this.description = "jq是一款轻量且灵活的命令行JSON处理工具。";
         this.infoURL = "https://github.com/jqlang/jq";
         this.inputType = "JSON";
         this.outputType = "string";
         this.args = [
             {
-                name: "Query",
+                name: "查询",
                 type: "string",
                 value: ""
             }
@@ -46,7 +48,7 @@ class Jq extends Operation {
         try {
             result = jq.json(input, query);
         } catch (err) {
-            throw new OperationError(`Invalid jq expression: ${err.message}`);
+            throw new OperationError(`无效的jq表达式：${err.message}`);
         }
 
         return JSON.stringify(result);

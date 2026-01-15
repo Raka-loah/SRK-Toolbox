@@ -4,6 +4,8 @@
  * @author gchqdev365 [gchqdev365@outlook.com]
  * @copyright Crown Copyright 2025
  * @license Apache-2.0
+ *
+ * Modified by Raka-loah@github for zh-CN i18n
  */
 import TestRegister from "../../lib/TestRegister.mjs";
 
@@ -14,7 +16,7 @@ TestRegister.addTests([
         expectedOutput: "0.0.0.0",
         recipeConfig: [
             {
-                "op": "Extract IP addresses",
+                "op": "提取IP地址",
                 "args": [true, true, false, false, false, false]
             },
         ],
@@ -25,7 +27,7 @@ TestRegister.addTests([
         expectedOutput: "10.10.10.10",
         recipeConfig: [
             {
-                "op": "Extract IP addresses",
+                "op": "提取IP地址",
                 "args": [true, true, false, false, false, false]
             },
         ],
@@ -36,7 +38,7 @@ TestRegister.addTests([
         expectedOutput: "100.100.100.100",
         recipeConfig: [
             {
-                "op": "Extract IP addresses",
+                "op": "提取IP地址",
                 "args": [true, true, false, false, false, false]
             },
         ],
@@ -47,7 +49,7 @@ TestRegister.addTests([
         expectedOutput: "255.255.255.255",
         recipeConfig: [
             {
-                "op": "Extract IP addresses",
+                "op": "提取IP地址",
                 "args": [true, true, false, false, false, false]
             },
         ],
@@ -58,7 +60,7 @@ TestRegister.addTests([
         expectedOutput: "10.10.10.10\n25.25.25.25\n99.99.99.99",
         recipeConfig: [
             {
-                "op": "Extract IP addresses",
+                "op": "提取IP地址",
                 "args": [true, true, false, false, false, false]
             },
         ],
@@ -69,7 +71,7 @@ TestRegister.addTests([
         expectedOutput: "",
         recipeConfig: [
             {
-                "op": "Extract IP addresses",
+                "op": "提取IP地址",
                 "args": [true, true, false, false, false, false]
             },
         ],
@@ -80,7 +82,7 @@ TestRegister.addTests([
         expectedOutput: "",
         recipeConfig: [
             {
-                "op": "Extract IP addresses",
+                "op": "提取IP地址",
                 "args": [true, true, false, false, false, false]
             },
         ],
@@ -91,7 +93,7 @@ TestRegister.addTests([
         expectedOutput: "",
         recipeConfig: [
             {
-                "op": "Extract IP addresses",
+                "op": "提取IP地址",
                 "args": [true, true, false, false, false, false]
             },
         ],
@@ -102,7 +104,7 @@ TestRegister.addTests([
         expectedOutput: "1.2.3.4\n5.6.7.8",
         recipeConfig: [
             {
-                "op": "Extract IP addresses",
+                "op": "提取IP地址",
                 "args": [true, true, false, false, false, false]
             },
         ],
@@ -113,7 +115,7 @@ TestRegister.addTests([
         expectedOutput: "01.01.01.01\n0123.0123.0123.0123\n0377.0377.0377.0377",
         recipeConfig: [
             {
-                "op": "Extract IP addresses",
+                "op": "提取IP地址",
                 "args": [true, true, false, false, false, false]
             },
         ],
@@ -124,7 +126,7 @@ TestRegister.addTests([
         expectedOutput: "",
         recipeConfig: [
             {
-                "op": "Extract IP addresses",
+                "op": "提取IP地址",
                 "args": [true, true, false, false, false, false]
             },
         ],

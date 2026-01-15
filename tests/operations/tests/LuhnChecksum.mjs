@@ -379,10 +379,10 @@ testCases.forEach(element => {
         {
             name: "Luhn Checksum Mod " + element.radix + " on " + element.input,
             input: element.input,
-            expectedOutput: "Checksum: " + element.checksum + "\nCheckdigit: " + element.checkdigit + "\nLuhn Validated String: " + element.input + element.checkdigit,
+            expectedOutput: "校验和： " + element.checksum + "\n检验位： " + element.checkdigit + "\nLuhn校验字符串： " + element.input + element.checkdigit,
             recipeConfig: [
                 {
-                    op: "Luhn Checksum",
+                    op: "Luhn校验和",
                     args: [element.radix]
                 },
             ],
@@ -419,7 +419,7 @@ TestRegister.addTests([
         expectedOutput: "校验和： 6\n检验位： 7\nLuhn校验字符串： 357269089713317",
         recipeConfig: [
             {
-                op: "Luhn Checksum",
+                op: "Luhn校验和",
                 args: [10]
             },
         ],

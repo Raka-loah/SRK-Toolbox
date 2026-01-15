@@ -2,6 +2,8 @@
  * @author bartblaze []
  * @copyright Crown Copyright 2025
  * @license Apache-2.0
+ *
+ * Modified by Raka-loah@github for zh-CN i18n
  */
 
 import Operation from "../Operation.mjs";
@@ -16,17 +18,17 @@ class ConvertLeetSpeak extends Operation {
     constructor() {
         super();
 
-        this.name = "Convert Leet Speak";
+        this.name = "Leet Speak转换";
         this.module = "Default";
-        this.description = "Converts to and from Leet Speak.";
+        this.description = "把英文内容转换为Leet Speak或者从Leet Speak恢复成原内容。（例：leet <=> 1337）";
         this.infoURL = "https://wikipedia.org/wiki/Leet";
         this.inputType = "string";
         this.outputType = "string";
         this.args = [
             {
-                name: "Direction",
+                name: "操作",
                 type: "option",
-                value: ["To Leet Speak", "From Leet Speak"],
+                value: ["Leet Speak编码", "Leet Speak解码"],
                 defaultIndex: 0
             }
         ];
@@ -40,12 +42,12 @@ class ConvertLeetSpeak extends Operation {
     run(input, args) {
         const direction = args[0];
 
-        if (direction === "To Leet Speak") {
+        if (direction === "Leet Speak编码") {
             return input.replace(/[a-z]/gi, char => {
                 const leetChar = toLeetMap[char.toLowerCase()] || char;
                 return char === char.toUpperCase() ? leetChar.toUpperCase() : leetChar;
             });
-        } else if (direction === "From Leet Speak") {
+        } else if (direction === "Leet Speak解码") {
             return input.replace(/[48cd3f6h1jklmn0pqr57uvwxyz]/gi, char => {
                 const normalChar = fromLeetMap[char] || char;
                 return normalChar;

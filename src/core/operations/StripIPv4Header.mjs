@@ -2,6 +2,8 @@
  * @author c65722 []
  * @copyright Crown Copyright 2024
  * @license Apache-2.0
+ *
+ * Modified by Raka-loah@github for zh-CN i18n
  */
 
 import Operation from "../Operation.mjs";
@@ -19,9 +21,9 @@ class StripIPv4Header extends Operation {
     constructor() {
         super();
 
-        this.name = "Strip IPv4 header";
+        this.name = "移除IPv4标头";
         this.module = "Default";
-        this.description = "Strips the IPv4 header from an IPv4 packet, outputting the payload.";
+        this.description = "从IPv4数据包移除IPv4标头，只输出数据包载荷";
         this.infoURL = "https://wikipedia.org/wiki/IPv4";
         this.inputType = "ArrayBuffer";
         this.outputType = "ArrayBuffer";
@@ -38,13 +40,13 @@ class StripIPv4Header extends Operation {
 
         const s = new Stream(new Uint8Array(input));
         if (s.length < MIN_HEADER_LEN) {
-            throw new OperationError("Input length is less than minimum IPv4 header length");
+            throw new OperationError("输入长度小于IPv4标头最小长度");
         }
 
         const ihl = s.readInt(1) & 0x0f;
         const dataOffsetBytes = ihl * 4;
         if (s.length < dataOffsetBytes) {
-            throw new OperationError("Input length is less than IHL");
+            throw new OperationError("输入长度小于IHL");
         }
 
         s.moveTo(dataOffsetBytes);

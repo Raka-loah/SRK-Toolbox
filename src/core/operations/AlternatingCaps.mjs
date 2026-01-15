@@ -2,6 +2,8 @@
  * @author sw5678
  * @copyright Crown Copyright 2023
  * @license Apache-2.0
+ *
+ * Modified by Raka-loah@github for zh-CN i18n
  */
 
 import Operation from "../Operation.mjs";
@@ -17,9 +19,9 @@ class AlternatingCaps extends Operation {
     constructor() {
         super();
 
-        this.name = "Alternating Caps";
+        this.name = "交替大小写";
         this.module = "Default";
-        this.description = "Alternating caps, also known as studly caps, sticky caps, or spongecase is a form of text notation in which the capitalization of letters varies by some pattern, or arbitrarily. An example of this would be spelling 'alternative caps' as 'aLtErNaTiNg CaPs'.";
+        this.description = "交替大小写（亦称驼峰大小写混合、粘滞大小写或海绵大小写）是一种文本表示形式，其字母的大小写根据特定模式或随机规则交替变化。例如，将“alternating caps”一词拼写为“aLtErNaTiNg CaPs”。";
         this.infoURL = "https://en.wikipedia.org/wiki/Alternating_caps";
         this.inputType = "string";
         this.outputType = "string";

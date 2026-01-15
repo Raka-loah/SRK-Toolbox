@@ -2,6 +2,8 @@
  * @author ccarpo [ccarpo@gmx.net]
  * @copyright Crown Copyright 2021
  * @license Apache-2.0
+ *
+ * Modified by Raka-loah@github
  */
 
 import Operation from "../Operation.mjs";
@@ -18,9 +20,9 @@ class YAMLToJSON extends Operation {
     constructor() {
         super();
 
-        this.name = "YAML to JSON";
+        this.name = "YAML转JSON";
         this.module = "Default";
-        this.description = "Convert YAML to JSON";
+        this.description = "将YAML转换为JSON";
         this.infoURL = "https://en.wikipedia.org/wiki/YAML";
         this.inputType = "string";
         this.outputType = "JSON";
@@ -36,7 +38,7 @@ class YAMLToJSON extends Operation {
         try {
             return jsYaml.load(input);
         } catch (err) {
-            throw new OperationError("Unable to parse YAML: " + err);
+            throw new OperationError("无法解析YAML： " + err);
         }
     }
 

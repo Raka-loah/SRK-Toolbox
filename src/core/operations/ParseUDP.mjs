@@ -26,7 +26,7 @@ class ParseUDP extends Operation {
 
         this.name = "解析UDP";
         this.module = "Default";
-        this.description = "解析UDP首部和载荷（如果有）。";
+        this.description = "解析UDP标头和载荷（如果有）。";
         this.infoURL = "https://wikipedia.org/wiki/User_Datagram_Protocol";
         this.inputType = "string";
         this.outputType = "json";
@@ -58,7 +58,7 @@ class ParseUDP extends Operation {
 
         const s = new Stream(new Uint8Array(input));
         if (s.length < 8) {
-            throw new OperationError("UDP首部需要至少8字节。");
+            throw new OperationError("UDP标头需要至少8字节。");
         }
 
         // Parse Header

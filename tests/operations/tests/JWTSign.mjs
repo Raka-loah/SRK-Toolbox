@@ -56,7 +56,7 @@ TestRegister.addTests([
         expectedOutput: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImN1c3RvbS5rZXkifQ.eyJTdHJpbmciOiJTb21lU3RyaW5nIiwiTnVtYmVyIjo0MiwiaWF0IjoxfQ.kXln8btJburfRlND8IDZAQ8NZGFFZhvHyooHa6N9za8",
         recipeConfig: [
             {
-                op: "JWT Sign",
+                op: "JWT签名",
                 args: [hsKey, "HS256", `{"kid":"custom.key"}`],
             }
         ],

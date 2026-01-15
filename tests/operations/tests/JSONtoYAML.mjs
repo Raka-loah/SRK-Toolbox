@@ -5,6 +5,8 @@
  *
  * @copyright Crown Copyright 2021
  * @license Apache-2.0
+ *
+ * Modified by Raka-loah@github for zh-CN i18n
  */
 import TestRegister from "../../lib/TestRegister.mjs";
 
@@ -22,7 +24,7 @@ TestRegister.addTests([
         }, null, 4),
         recipeConfig: [
             {
-                op: "YAML to JSON",
+                op: "YAML转JSON",
                 args: [],
             }
         ],
@@ -33,7 +35,7 @@ TestRegister.addTests([
         expectedOutput: `number: 3\nplain: string\n`,
         recipeConfig: [
             {
-                op: "JSON to YAML",
+                op: "JSON转YAML",
                 args: [],
             }
         ],

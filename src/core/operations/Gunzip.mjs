@@ -24,7 +24,7 @@ class Gunzip extends Operation {
 
         this.name = "Gunzip";
         this.module = "Compression";
-        this.description = "解压使用带有Gzip头部的deflate算法压缩的数据。";
+        this.description = "解压使用带有Gzip标头的deflate算法压缩的数据。";
         this.infoURL = "https://wikipedia.org/wiki/Gzip";
         this.inputType = "ArrayBuffer";
         this.outputType = "ArrayBuffer";

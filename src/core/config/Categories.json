@@ -72,14 +72,14 @@
             "Avro转JSON",
             "CBOR编码",
             "CBOR解码",
-            "YAML to JSON",
-            "JSON to YAML",
+            "YAML转JSON",
+            "JSON转YAML",
             "Caret/M-解码",
             "Rison编码",
             "Rison解码",
-            "To Modhex",
-            "From Modhex",
-            "MIME Decoding"
+            "Modhex编码",
+            "Modhex解码",
+            "MIME解码"
         ]
     },
     {
@@ -169,7 +169,7 @@
         "name": "公钥",
         "ops": [
             "解析X.509证书",
-            "Parse X.509 CRL",
+            "解析X.509证书吊销列表",
             "解析ASN.1十六进制字符串",
             "PEM转十六进制",
             "十六进制转PEM",
@@ -196,8 +196,8 @@
             "解析CSR",
             "从证书提取公钥",
             "从私钥提取公钥",
-            "SM2 Encrypt",
-            "SM2 Decrypt"
+            "SM2加密",
+            "SM2解密"
         ]
     },
     {
@@ -236,19 +236,19 @@
         "ops": [
             "HTTP请求",
             "DNS over HTTPS",
-            "删除HTTP头部",
+            "移除HTTP标头",
             "合并HTTP响应分块",
             "解析User Agent",
             "解析IP范围",
             "解析IPv6地址",
-            "IPv6 Transition Addresses",
-            "解析IPv4首部",
-            "Strip IPv4 header",
+            "IPv6过渡地址",
+            "解析IPv4标头",
+            "移除IPv4标头",
             "解析TCP",
-            "Strip TCP header",
-            "Parse TLS record",
+            "移除TCP标头",
+            "解析TLS记录",
             "解析UDP",
-            "Strip UDP header",
+            "移除UDP标头",
             "解析SSH主机密钥",
             "解析URI",
             "URL编码",
@@ -282,7 +282,7 @@
             "移除变音符号",
             "Unicode转义恢复",
             "转换为北约音标字母",
-            "Convert Leet Speak"
+            "Leet Speak转换"
         ]
     },
     {
@@ -294,7 +294,7 @@
             "转换为大写",
             "转换为小写",
             "大小写互换",
-            "Alternating Caps",
+            "交替大小写",
             "转换为大小写不敏感正则",
             "从大小写不敏感正则恢复",
             "添加行号",
@@ -336,8 +336,8 @@
             "伪随机数生成器",
             "Sleep",
             "文件树",
-            "Take nth bytes",
-            "Drop nth bytes"
+            "提取每N个字节",
+            "删除每N个字节"
         ]
     },
     {
@@ -370,13 +370,13 @@
             "正则表达式",
             "XPath表达式",
             "JPath表达式",
-            "Jsonata Query",
+            "Jsonata查询",
             "CSS选择器",
             "提取EXIF",
             "提取ID3",
             "提取文件",
             "RAKE",
-            "Template"
+            "模板渲染"
         ]
     },
     {
@@ -407,7 +407,7 @@
         "name": "哈希",
         "ops": [
             "哈希分析",
-            "Generate all checksums",
+            "生成所有校验和",
             "哈希生成",
             "MD2",
             "MD4",
@@ -450,7 +450,8 @@
             "Fletcher-64校验和",
             "Adler-32校验和",
             "Luhn校验和",
-            "CRC校验和"
+            "CRC校验和",
+            "TCP/IP校验和",
             "XOR校验和"
         ]
     },
@@ -550,7 +551,7 @@
             "伪随机数生成器",
             "生成德布鲁因序列",
             "生成UUID",
-            "Analyse UUID",
+            "解析UUID",
             "生成TOTP",
             "生成HOTP",
             "生成二维码",

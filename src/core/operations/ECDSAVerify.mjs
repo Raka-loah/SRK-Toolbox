@@ -64,9 +64,9 @@ class ECDSAVerify extends Operation {
                 value: ""
             },
             {
-                name: "Message format",
+                name: "消息格式",
                 type: "option",
-                value: ["Raw", "Hex", "Base64"]
+                value: ["原始", "十六进制", "Base64"]
             }
         ];
     }

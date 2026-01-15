@@ -2,6 +2,8 @@
  * @author c65722 []
  * @copyright Crown Copyright 2024
  * @license Apache-2.0
+ *
+ * Modified by Raka-loah@github for zh-CN i18n
  */
 
 import Operation from "../Operation.mjs";
@@ -20,9 +22,9 @@ class ParseTLSRecord extends Operation {
     constructor() {
         super();
 
-        this.name = "Parse TLS record";
+        this.name = "解析TLS记录";
         this.module = "Default";
-        this.description = "Parses one or more TLS records";
+        this.description = "解析一个或多个TLS记录";
         this.infoURL = "https://wikipedia.org/wiki/Transport_Layer_Security";
         this.inputType = "ArrayBuffer";
         this.outputType = "json";

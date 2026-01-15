@@ -42,7 +42,7 @@ TestRegister.addTests([
     {
         name: "Parse UDP: Not Enough Bytes",
         input: "04 89 00",
-        expectedOutput: "UDP首部需要至少8字节。",
+        expectedOutput: "UDP标头需要至少8字节。",
         recipeConfig: [
             {
                 op: "解析UDP",

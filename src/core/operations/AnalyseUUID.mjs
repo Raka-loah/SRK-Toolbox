@@ -2,6 +2,8 @@
  * @author n1474335 [n1474335@gmail.com]
  * @copyright Crown Copyright 2023
  * @license Apache-2.0
+ *
+ * Modified by Raka-loah@github for zh-CN i18n
  */
 
 import * as uuid from "uuid";
@@ -20,9 +22,9 @@ class AnalyseUUID extends Operation {
     constructor() {
         super();
 
-        this.name = "Analyse UUID";
+        this.name = "解析UUID";
         this.module = "Crypto";
-        this.description = "Tries to determine information about a given UUID and suggests which version may have been used to generate it";
+        this.description = "尝试解析给定UUID的信息，并推测其可能基于哪个版本标准生成。";
         this.infoURL = "https://wikipedia.org/wiki/Universally_unique_identifier";
         this.inputType = "string";
         this.outputType = "string";
@@ -37,9 +39,9 @@ class AnalyseUUID extends Operation {
     run(input, args) {
         try {
             const uuidVersion = uuid.version(input);
-            return "UUID version: " + uuidVersion;
+            return "UUID版本：" + uuidVersion;
         } catch (error) {
-            throw new OperationError("Invalid UUID");
+            throw new OperationError("无效的UUID");
         }
     }
 

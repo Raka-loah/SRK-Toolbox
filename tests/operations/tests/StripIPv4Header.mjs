@@ -4,6 +4,8 @@
  * @author c65722 []
  * @copyright Crown Copyright 2024
  * @license Apache-2.0
+ *
+ * Modified by Raka-loah@github
  */
 
 import TestRegister from "../../lib/TestRegister.mjs";
@@ -15,16 +17,16 @@ TestRegister.addTests([
         expectedOutput: "",
         recipeConfig: [
             {
-                op: "From Hex",
-                args: ["None"]
+                op: "十六进制转字符",
+                args: ["无"]
             },
             {
-                op: "Strip IPv4 header",
+                op: "移除IPv4标头",
                 args: [],
             },
             {
-                op: "To Hex",
-                args: ["None", 0]
+                op: "字符转十六进制",
+                args: ["无", 0]
             }
         ]
     },
@@ -34,16 +36,16 @@ TestRegister.addTests([
         expectedOutput: "ffffffffffffffff",
         recipeConfig: [
             {
-                op: "From Hex",
-                args: ["None"]
+                op: "十六进制转字符",
+                args: ["无"]
             },
             {
-                op: "Strip IPv4 header",
+                op: "移除IPv4标头",
                 args: [],
             },
             {
-                op: "To Hex",
-                args: ["None", 0]
+                op: "字符转十六进制",
+                args: ["无", 0]
             }
         ]
     },
@@ -53,16 +55,16 @@ TestRegister.addTests([
         expectedOutput: "",
         recipeConfig: [
             {
-                op: "From Hex",
-                args: ["None"]
+                op: "十六进制转字符",
+                args: ["无"]
             },
             {
-                op: "Strip IPv4 header",
+                op: "移除IPv4标头",
                 args: [],
             },
             {
-                op: "To Hex",
-                args: ["None", 0]
+                op: "字符转十六进制",
+                args: ["无", 0]
             }
         ]
     },
@@ -72,54 +74,54 @@ TestRegister.addTests([
         expectedOutput: "ffffffffffffffff",
         recipeConfig: [
             {
-                op: "From Hex",
-                args: ["None"]
+                op: "十六进制转字符",
+                args: ["无"]
             },
             {
-                op: "Strip IPv4 header",
+                op: "移除IPv4标头",
                 args: [],
             },
             {
-                op: "To Hex",
-                args: ["None", 0]
+                op: "字符转十六进制",
+                args: ["无", 0]
             }
         ]
     },
     {
         name: "Strip IPv4 header: Input length lesss than minimum header length",
         input: "450000140005400080060000c0a80001c0a800",
-        expectedOutput: "Input length is less than minimum IPv4 header length",
+        expectedOutput: "输入长度小于IPv4标头最小长度",
         recipeConfig: [
             {
-                op: "From Hex",
-                args: ["None"]
+                op: "十六进制转字符",
+                args: ["无"]
             },
             {
-                op: "Strip IPv4 header",
+                op: "移除IPv4标头",
                 args: [],
             },
             {
-                op: "To Hex",
-                args: ["None", 0]
+                op: "字符转十六进制",
+                args: ["无", 0]
             }
         ]
     },
     {
         name: "Strip IPv4 header: Input length less than IHL",
         input: "460000140005400080060000c0a80001c0a80000",
-        expectedOutput: "Input length is less than IHL",
+        expectedOutput: "输入长度小于IHL",
         recipeConfig: [
             {
-                op: "From Hex",
-                args: ["None"]
+                op: "十六进制转字符",
+                args: ["无"]
             },
             {
-                op: "Strip IPv4 header",
+                op: "移除IPv4标头",
                 args: [],
             },
             {
-                op: "To Hex",
-                args: ["None", 0]
+                op: "字符转十六进制",
+                args: ["无", 0]
             }
         ]
     }

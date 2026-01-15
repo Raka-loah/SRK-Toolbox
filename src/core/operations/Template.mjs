@@ -2,6 +2,8 @@
  * @author kendallgoto [k@kgo.to]
  * @copyright Crown Copyright 2025
  * @license Apache-2.0
+ *
+ * Modified by Raka-loah@github for zh-CN i18n
  */
 
 import Operation from "../Operation.mjs";
@@ -19,15 +21,15 @@ class Template extends Operation {
     constructor() {
         super();
 
-        this.name = "Template";
+        this.name = "模板渲染";
         this.module = "Handlebars";
-        this.description = "Render a template with Handlebars/Mustache substituting variables using JSON input. Templates will be rendered to plain-text only, to prevent XSS.";
+        this.description = "使用Handlebars/Mustache模板引擎，通过JSON输入数据替换变量并渲染模板。模板渲染结果将仅输出纯文本，以防止跨站脚本攻击。";
         this.infoURL = "https://handlebarsjs.com/";
         this.inputType = "JSON";
         this.outputType = "string";
         this.args = [
             {
-                name: "Template definition (.handlebars)",
+                name: "模板定义（.handlebars）",
                 type: "text",
                 value: ""
             }

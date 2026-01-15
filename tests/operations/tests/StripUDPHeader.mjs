@@ -4,6 +4,8 @@
  * @author c65722 []
  * @copyright Crown Copyright 2024
  * @license Apache-2.0
+ *
+ * Modified by Raka-loah@github
  */
 
 import TestRegister from "../../lib/TestRegister.mjs";
@@ -15,16 +17,16 @@ TestRegister.addTests([
         expectedOutput: "",
         recipeConfig: [
             {
-                op: "From Hex",
-                args: ["None"]
+                op: "十六进制转字符",
+                args: ["无"]
             },
             {
-                op: "Strip UDP header",
+                op: "移除UDP标头",
                 args: [],
             },
             {
-                op: "To Hex",
-                args: ["None", 0]
+                op: "字符转十六进制",
+                args: ["无", 0]
             }
         ]
     },
@@ -34,35 +36,35 @@ TestRegister.addTests([
         expectedOutput: "ffffffffffffffff",
         recipeConfig: [
             {
-                op: "From Hex",
-                args: ["None"]
+                op: "十六进制转字符",
+                args: ["无"]
             },
             {
-                op: "Strip UDP header",
+                op: "移除UDP标头",
                 args: [],
             },
             {
-                op: "To Hex",
-                args: ["None", 0]
+                op: "字符转十六进制",
+                args: ["无", 0]
             }
         ]
     },
     {
         name: "Strip UDP header: Input length less than header length",
         input: "81110035000000",
-        expectedOutput: "Need 8 bytes for a UDP Header",
+        expectedOutput: "UDP标头长度至少8字节",
         recipeConfig: [
             {
-                op: "From Hex",
-                args: ["None"]
+                op: "十六进制转字符",
+                args: ["无"]
             },
             {
-                op: "Strip UDP header",
+                op: "移除UDP标头",
                 args: [],
             },
             {
-                op: "To Hex",
-                args: ["None", 0]
+                op: "字符转十六进制",
+                args: ["无", 0]
             }
         ]
     }

@@ -2,6 +2,8 @@
  * @author linuxgemini [ilteris@asenkron.com.tr]
  * @copyright Crown Copyright 2024
  * @license Apache-2.0
+ *
+ * Modified by Raka-loah@github
  */
 
 import Operation from "../Operation.mjs";
@@ -19,20 +21,20 @@ class ToModhex extends Operation {
     constructor() {
         super();
 
-        this.name = "To Modhex";
+        this.name = "Modhex编码";
         this.module = "Default";
-        this.description = "Converts the input string to modhex bytes separated by the specified delimiter.";
+        this.description = "将输入字符串使用给定的分隔符编码为Modhex字符串。";
         this.infoURL = "https://en.wikipedia.org/wiki/YubiKey#ModHex";
         this.inputType = "ArrayBuffer";
         this.outputType = "string";
         this.args = [
             {
-                name: "Delimiter",
+                name: "分隔符",
                 type: "option",
                 value: TO_MODHEX_DELIM_OPTIONS
             },
             {
-                name: "Bytes per line",
+                name: "每行字节数",
                 type: "number",
                 value: 0
             }

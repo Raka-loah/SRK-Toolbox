@@ -5,6 +5,8 @@
  *
  * @copyright Crown Copyright 2025
  * @license Apache-2.0
+ *
+ * Modified by Raka-loah@github for zh-CN i18n
  */
 import TestRegister from "../../lib/TestRegister.mjs";
 
@@ -72,7 +74,7 @@ TestRegister.addTests([
         expectedOutput: '"Smith"',
         recipeConfig: [
             {
-                op: "Jsonata Query",
+                op: "Jsonata查询",
                 args: ["Surname"],
             },
         ],
@@ -83,7 +85,7 @@ TestRegister.addTests([
         expectedOutput: "28",
         recipeConfig: [
             {
-                op: "Jsonata Query",
+                op: "Jsonata查询",
                 args: ["Age"],
             },
         ],
@@ -94,7 +96,7 @@ TestRegister.addTests([
         expectedOutput: '"Winchester"',
         recipeConfig: [
             {
-                op: "Jsonata Query",
+                op: "Jsonata查询",
                 args: ["Address.City"],
             },
         ],
@@ -105,7 +107,7 @@ TestRegister.addTests([
         expectedOutput: "null",
         recipeConfig: [
             {
-                op: "Jsonata Query",
+                op: "Jsonata查询",
                 args: ["Other.Misc"],
             },
         ],
@@ -116,7 +118,7 @@ TestRegister.addTests([
         expectedOutput: '""',
         recipeConfig: [
             {
-                op: "Jsonata Query",
+                op: "Jsonata查询",
                 args: ["Other.DoesntExist"],
             },
         ],
@@ -127,7 +129,7 @@ TestRegister.addTests([
         expectedOutput: "true",
         recipeConfig: [
             {
-                op: "Jsonata Query",
+                op: "Jsonata查询",
                 args: ["Other.`Over 18 ?`"],
             },
         ],
@@ -138,7 +140,7 @@ TestRegister.addTests([
         expectedOutput: '{"type":"home","number":"0203 544 1234"}',
         recipeConfig: [
             {
-                op: "Jsonata Query",
+                op: "Jsonata查询",
                 args: ["Phone[0]"],
             },
         ],
@@ -149,7 +151,7 @@ TestRegister.addTests([
         expectedOutput: '{"type":"office","number":"01962 001234"}',
         recipeConfig: [
             {
-                op: "Jsonata Query",
+                op: "Jsonata查询",
                 args: ["Phone[1]"],
             },
         ],
@@ -160,7 +162,7 @@ TestRegister.addTests([
         expectedOutput: '{"type":"mobile","number":"077 7700 1234"}',
         recipeConfig: [
             {
-                op: "Jsonata Query",
+                op: "Jsonata查询",
                 args: ["Phone[-1]"],
             },
         ],
@@ -171,7 +173,7 @@ TestRegister.addTests([
         expectedOutput: '{"type":"office","number":"01962 001235"}',
         recipeConfig: [
             {
-                op: "Jsonata Query",
+                op: "Jsonata查询",
                 args: ["Phone[-2]"],
             },
         ],
@@ -182,7 +184,7 @@ TestRegister.addTests([
         expectedOutput: '""',
         recipeConfig: [
             {
-                op: "Jsonata Query",
+                op: "Jsonata查询",
                 args: ["Phone[8]"],
             },
         ],
@@ -193,7 +195,7 @@ TestRegister.addTests([
         expectedOutput: '"0203 544 1234"',
         recipeConfig: [
             {
-                op: "Jsonata Query",
+                op: "Jsonata查询",
                 args: ["Phone[0].number"],
             },
         ],
@@ -205,7 +207,7 @@ TestRegister.addTests([
             '["0203 544 1234","01962 001234","01962 001235","077 7700 1234"]',
         recipeConfig: [
             {
-                op: "Jsonata Query",
+                op: "Jsonata查询",
                 args: ["Phone.number"],
             },
         ],
@@ -217,7 +219,7 @@ TestRegister.addTests([
             '["0203 544 1234","01962 001234","01962 001235","077 7700 1234"]',
         recipeConfig: [
             {
-                op: "Jsonata Query",
+                op: "Jsonata查询",
                 args: ["Phone.number[0]"],
             },
         ],
@@ -228,7 +230,7 @@ TestRegister.addTests([
         expectedOutput: '"0203 544 1234"',
         recipeConfig: [
             {
-                op: "Jsonata Query",
+                op: "Jsonata查询",
                 args: ["(Phone.number)[0]"],
             },
         ],
@@ -240,7 +242,7 @@ TestRegister.addTests([
             '[{"type":"home","number":"0203 544 1234"},{"type":"office","number":"01962 001234"}]',
         recipeConfig: [
             {
-                op: "Jsonata Query",
+                op: "Jsonata查询",
                 args: ["Phone[[0..1]]"],
             },
         ],
@@ -252,7 +254,7 @@ TestRegister.addTests([
         expectedOutput: '{"type":"mobile","number":"077 7700 1234"}',
         recipeConfig: [
             {
-                op: "Jsonata Query",
+                op: "Jsonata查询",
                 args: ["Phone[type='mobile']"],
             },
         ],
@@ -263,7 +265,7 @@ TestRegister.addTests([
         expectedOutput: '"077 7700 1234"',
         recipeConfig: [
             {
-                op: "Jsonata Query",
+                op: "Jsonata查询",
                 args: ["Phone[type='mobile'].number"],
             },
         ],
@@ -274,7 +276,7 @@ TestRegister.addTests([
         expectedOutput: '["01962 001234","01962 001235"]',
         recipeConfig: [
             {
-                op: "Jsonata Query",
+                op: "Jsonata查询",
                 args: ["Phone[type='office'].number"],
             },
         ],
@@ -286,7 +288,7 @@ TestRegister.addTests([
         expectedOutput: '["Hursley Park","Winchester","SO21 2JN"]',
         recipeConfig: [
             {
-                op: "Jsonata Query",
+                op: "Jsonata查询",
                 args: ["Address.*"],
             },
         ],
@@ -297,7 +299,7 @@ TestRegister.addTests([
         expectedOutput: '"SO21 2JN"',
         recipeConfig: [
             {
-                op: "Jsonata Query",
+                op: "Jsonata查询",
                 args: ["*.Postcode"],
             },
         ],
@@ -308,7 +310,7 @@ TestRegister.addTests([
         expectedOutput: '["SO21 2JN","E1 6RF"]',
         recipeConfig: [
             {
-                op: "Jsonata Query",
+                op: "Jsonata查询",
                 args: ["**.Postcode"],
             },
         ],
@@ -320,7 +322,7 @@ TestRegister.addTests([
         expectedOutput: '"Fred Smith"',
         recipeConfig: [
             {
-                op: "Jsonata Query",
+                op: "Jsonata查询",
                 args: ["FirstName & ' ' & Surname"],
             },
         ],
@@ -331,7 +333,7 @@ TestRegister.addTests([
         expectedOutput: '"Hursley Park, Winchester"',
         recipeConfig: [
             {
-                op: "Jsonata Query",
+                op: "Jsonata查询",
                 args: ["Address.(Street & ', ' & City)"],
             },
         ],
@@ -342,7 +344,7 @@ TestRegister.addTests([
         expectedOutput: '"50true"',
         recipeConfig: [
             {
-                op: "Jsonata Query",
+                op: "Jsonata查询",
                 args: ["5&0&true"],
             },
         ],
@@ -354,7 +356,7 @@ TestRegister.addTests([
         expectedOutput: "3.4",
         recipeConfig: [
             {
-                op: "Jsonata Query",
+                op: "Jsonata查询",
                 args: ["Numbers[0] + Numbers[1]"],
             },
         ],
@@ -365,7 +367,7 @@ TestRegister.addTests([
         expectedOutput: "-19.9",
         recipeConfig: [
             {
-                op: "Jsonata Query",
+                op: "Jsonata查询",
                 args: ["Numbers[0] - Numbers[4]"],
             },
         ],
@@ -376,7 +378,7 @@ TestRegister.addTests([
         expectedOutput: "30",
         recipeConfig: [
             {
-                op: "Jsonata Query",
+                op: "Jsonata查询",
                 args: ["Numbers[0] * Numbers[5]"],
             },
         ],
@@ -387,7 +389,7 @@ TestRegister.addTests([
         expectedOutput: "0.04784688995215311",
         recipeConfig: [
             {
-                op: "Jsonata Query",
+                op: "Jsonata查询",
                 args: ["Numbers[0] / Numbers[4]"],
             },
         ],
@@ -398,7 +400,7 @@ TestRegister.addTests([
         expectedOutput: "3.5",
         recipeConfig: [
             {
-                op: "Jsonata Query",
+                op: "Jsonata查询",
                 args: ["Numbers[2] % Numbers[5]"],
             },
         ],
@@ -409,7 +411,7 @@ TestRegister.addTests([
         expectedOutput: "false",
         recipeConfig: [
             {
-                op: "Jsonata Query",
+                op: "Jsonata查询",
                 args: ["Numbers[0] = Numbers[5]"],
             },
         ],
@@ -420,7 +422,7 @@ TestRegister.addTests([
         expectedOutput: "true",
         recipeConfig: [
             {
-                op: "Jsonata Query",
+                op: "Jsonata查询",
                 args: ["Numbers[0] != Numbers[4]"],
             },
         ],
@@ -431,7 +433,7 @@ TestRegister.addTests([
         expectedOutput: "true",
         recipeConfig: [
             {
-                op: "Jsonata Query",
+                op: "Jsonata查询",
                 args: ["Numbers[0] < Numbers[4]"],
             },
         ],
@@ -442,7 +444,7 @@ TestRegister.addTests([
         expectedOutput: "true",
         recipeConfig: [
             {
-                op: "Jsonata Query",
+                op: "Jsonata查询",
                 args: ["Numbers[0] <= Numbers[4]"],
             },
         ],
@@ -453,7 +455,7 @@ TestRegister.addTests([
         expectedOutput: "false",
         recipeConfig: [
             {
-                op: "Jsonata Query",
+                op: "Jsonata查询",
                 args: ["Numbers[0] > Numbers[4]"],
             },
         ],
@@ -464,7 +466,7 @@ TestRegister.addTests([
         expectedOutput: "false",
         recipeConfig: [
             {
-                op: "Jsonata Query",
+                op: "Jsonata查询",
                 args: ["Numbers[2] >= Numbers[4]"],
             },
         ],
@@ -475,7 +477,7 @@ TestRegister.addTests([
         expectedOutput: "true",
         recipeConfig: [
             {
-                op: "Jsonata Query",
+                op: "Jsonata查询",
                 args: ['"01962 001234" in Phone.number'],
             },
         ],
@@ -487,7 +489,7 @@ TestRegister.addTests([
         expectedOutput: "true",
         recipeConfig: [
             {
-                op: "Jsonata Query",
+                op: "Jsonata查询",
                 args: ["(Numbers[2] != 0) and (Numbers[5] != Numbers[1])"],
             },
         ],
@@ -498,7 +500,7 @@ TestRegister.addTests([
         expectedOutput: "true",
         recipeConfig: [
             {
-                op: "Jsonata Query",
+                op: "Jsonata查询",
                 args: ["(Numbers[2] != 0) or (Numbers[5] = Numbers[1])"],
             },
         ],
@@ -510,7 +512,7 @@ TestRegister.addTests([
         expectedOutput: '{"ref":[1,2]}',
         recipeConfig: [
             {
-                op: "Jsonata Query",
+                op: "Jsonata查询",
                 args: ["$[0]"],
             },
         ],
@@ -521,7 +523,7 @@ TestRegister.addTests([
         expectedOutput: "[1,2]",
         recipeConfig: [
             {
-                op: "Jsonata Query",
+                op: "Jsonata查询",
                 args: ["$[0].ref"],
             },
         ],
@@ -532,7 +534,7 @@ TestRegister.addTests([
         expectedOutput: "1",
         recipeConfig: [
             {
-                op: "Jsonata Query",
+                op: "Jsonata查询",
                 args: ["$[0].ref[0]"],
             },
         ],
@@ -543,7 +545,7 @@ TestRegister.addTests([
         expectedOutput: "[1,2,3,4]",
         recipeConfig: [
             {
-                op: "Jsonata Query",
+                op: "Jsonata查询",
                 args: ["$.ref"],
             },
         ],

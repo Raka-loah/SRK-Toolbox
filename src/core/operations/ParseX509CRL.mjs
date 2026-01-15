@@ -2,6 +2,8 @@
  * @author robinsandhu
  * @copyright Crown Copyright 2024
  * @license Apache-2.0
+ *
+ * Modified by Raka-loah@github
  */
 
 import r from "jsrsasign";
@@ -23,17 +25,17 @@ class ParseX509CRL extends Operation {
     constructor() {
         super();
 
-        this.name = "Parse X.509 CRL";
+        this.name = "解析X.509证书吊销列表";
         this.module = "PublicKey";
-        this.description = "Parse Certificate Revocation List (CRL)";
+        this.description = "解析证书吊销列表（Certificate Revocation List，CRL）";
         this.infoURL = "https://wikipedia.org/wiki/Certificate_revocation_list";
         this.inputType = "string";
         this.outputType = "string";
         this.args = [
             {
-                "name": "Input format",
+                "name": "输入格式",
                 "type": "option",
-                "value": ["PEM", "DER Hex", "Base64", "Raw"]
+                "value": ["PEM", "DER十六进制", "Base64", "原始"]
             }
         ];
         this.checks = [
@@ -52,7 +54,7 @@ class ParseX509CRL extends Operation {
      */
     run(input, args) {
         if (!input.length) {
-            return "No input";
+            return "输入内容为空";
         }
 
         const inputFormat = args[0];
@@ -60,7 +62,7 @@ class ParseX509CRL extends Operation {
         let undefinedInputFormat = false;
         try {
             switch (inputFormat) {
-                case "DER Hex":
+                case "DER十六进制":
                     input = input.replace(/\s/g, "").toLowerCase();
                     break;
                 case "PEM":
@@ -68,32 +70,32 @@ class ParseX509CRL extends Operation {
                 case "Base64":
                     input = toHex(fromBase64(input, null, "byteArray"), "");
                     break;
-                case "Raw":
+                case "原始":
                     input = toHex(Utils.strToArrayBuffer(input), "");
                     break;
                 default:
                     undefinedInputFormat = true;
             }
         } catch (e) {
-            throw "Certificate load error (non-certificate input?)";
+            throw "证书加载错误（请确保输入内容为证书）";
         }
-        if (undefinedInputFormat) throw "Undefined input format";
+        if (undefinedInputFormat) throw "未知的输入格式";
 
         const crl = new r.X509CRL(input);
 
-        let out = `Certificate Revocation List (CRL):
-    Version: ${crl.getVersion() === null ? "1 (0x0)" : "2 (0x1)"}
-    Signature Algorithm: ${crl.getSignatureAlgorithmField()}
-    Issuer:\n${formatDnObj(crl.getIssuer(), 8)}
-    Last Update: ${generalizedDateTimeToUTC(crl.getThisUpdate())}
-    Next Update: ${generalizedDateTimeToUTC(crl.getNextUpdate())}\n`;
+        let out = `证书吊销列表 (CRL):
+    版本： ${crl.getVersion() === null ? "1 (0x0)" : "2 (0x1)"}
+    签名算法： ${crl.getSignatureAlgorithmField()}
+    颁发者：\n${formatDnObj(crl.getIssuer(), 8)}
+    最近更新： ${generalizedDateTimeToUTC(crl.getThisUpdate())}
+    下次更新： ${generalizedDateTimeToUTC(crl.getNextUpdate())}\n`;
 
         if (crl.getParam().ext !== undefined) {
-            out += `\tCRL extensions:\n${formatCRLExtensions(crl.getParam().ext, 8)}\n`;
+            out += `\tCRL扩展：\n${formatCRLExtensions(crl.getParam().ext, 8)}\n`;
         }
 
-        out += `Revoked Certificates:\n${formatRevokedCertificates(crl.getRevCertArray(), 4)}
-Signature Value:\n${formatCRLSignature(crl.getSignatureValueHex(), 8)}`;
+        out += `已吊销的证书：\n${formatRevokedCertificates(crl.getRevCertArray(), 4)}
+签名值：\n${formatCRLSignature(crl.getSignatureValueHex(), 8)}`;
 
         return out;
     }
@@ -107,7 +109,7 @@ Signature Value:\n${formatCRLSignature(crl.getSignatureValueHex(), 8)}`;
 function generalizedDateTimeToUTC(datetime) {
     // Ensure the string is in the correct format
     if (!/^\d{12,14}Z$/.test(datetime)) {
-        throw new OperationError(`failed to format datetime string ${datetime}`);
+        throw new OperationError(`datetime字符串 ${datetime} 构造失败`);
     }
 
     // Extract components
@@ -140,7 +142,7 @@ function generalizedDateTimeToUTC(datetime) {
  */
 function formatCRLExtensions(extensions, indent) {
     if (Array.isArray(extensions) === false || extensions.length === 0) {
-        return indentString(`No CRL extensions.`, indent);
+        return indentString(`无CRL扩展。`, indent);
     }
 
     let out = ``;
@@ -160,40 +162,40 @@ function formatCRLExtensions(extensions, indent) {
 
     extensions.forEach((ext) => {
         if (!Object.hasOwn(ext, "extname")) {
-            throw new OperationError(`CRL entry extension object missing 'extname' key: ${ext}`);
+            throw new OperationError(`CRL条目扩展对象缺少'extname'键： ${ext}`);
         }
         switch (ext.extname) {
             case "authorityKeyIdentifier":
-                out += `X509v3 Authority Key Identifier:\n`;
+                out += `X509v3 颁发机构密钥标识符：\n`;
                 if (Object.hasOwn(ext, "kid")) {
-                    out += `\tkeyid:${colonDelimitedHexFormatString(ext.kid.hex.toUpperCase())}\n`;
+                    out += `\tkeyid：${colonDelimitedHexFormatString(ext.kid.hex.toUpperCase())}\n`;
                 }
                 if (Object.hasOwn(ext, "issuer")) {
-                    out += `\tDirName:${ext.issuer.str}\n`;
+                    out += `\tDirName：${ext.issuer.str}\n`;
                 }
                 if (Object.hasOwn(ext, "sn")) {
-                    out += `\tserial:${colonDelimitedHexFormatString(ext.sn.hex.toUpperCase())}\n`;
+                    out += `\tserial：${colonDelimitedHexFormatString(ext.sn.hex.toUpperCase())}\n`;
                 }
                 break;
             case "cRLDistributionPoints":
-                out += `X509v3 CRL Distribution Points:\n`;
+                out += `X509v3 CRL分发点：\n`;
                 ext.array.forEach((distPoint) => {
-                    const fullName = `Full Name:\n${formatGeneralNames(distPoint.dpname.full, 4)}`;
+                    const fullName = `全名：\n${formatGeneralNames(distPoint.dpname.full, 4)}`;
                     out += indentString(fullName, 4) + "\n";
                 });
                 break;
             case "cRLNumber":
                 if (!Object.hasOwn(ext, "num")) {
-                    throw new OperationError(`'cRLNumber' CRL entry extension missing 'num' key: ${ext}`);
+                    throw new OperationError(`'cRLNumber' CRL条目扩展缺少'num'键： ${ext}`);
                 }
-                out += `X509v3 CRL Number:\n\t${ext.num.hex.toUpperCase()}\n`;
+                out += `X509v3 CRL号码：\n\t${ext.num.hex.toUpperCase()}\n`;
                 break;
             case "issuerAltName":
-                out += `X509v3 Issuer Alternative Name:\n${formatGeneralNames(ext.array, 4)}\n`;
+                out += `X509v3 颁发者别名：\n${formatGeneralNames(ext.array, 4)}\n`;
                 break;
             default:
                 out += `${ext.extname}:\n`;
-                out += `\tUnsupported CRL extension. Try openssl CLI.\n`;
+                out += `\t不支持的CRL扩展。试试Openssl命令行。\n`;
                 break;
         }
     });
@@ -214,25 +216,25 @@ function formatGeneralNames(names, indent) {
 
         switch (key) {
             case "ip":
-                out += `IP:${name.ip}\n`;
+                out += `IP：${name.ip}\n`;
                 break;
             case "dns":
-                out += `DNS:${name.dns}\n`;
+                out += `DNS：${name.dns}\n`;
                 break;
             case "uri":
-                out += `URI:${name.uri}\n`;
+                out += `URI：${name.uri}\n`;
                 break;
             case "rfc822":
-                out += `EMAIL:${name.rfc822}\n`;
+                out += `EMAIL：${name.rfc822}\n`;
                 break;
             case "dn":
-                out += `DIR:${name.dn.str}\n`;
+                out += `DIR：${name.dn.str}\n`;
                 break;
             case "other":
-                out += `OtherName:${name.other.oid}::${Object.values(name.other.value)[0].str}\n`;
+                out += `OtherName：${name.other.oid}::${Object.values(name.other.value)[0].str}\n`;
                 break;
             default:
-                out += `${key}: unsupported general name type`;
+                out += `${key}: 不支持的通用名称类型`;
                 break;
         }
     });
@@ -261,20 +263,20 @@ function colonDelimitedHexFormatString(hexString) {
  */
 function formatRevokedCertificates(revokedCertificates, indent) {
     if (Array.isArray(revokedCertificates) === false || revokedCertificates.length === 0) {
-        return indentString("No Revoked Certificates.", indent);
+        return indentString("没有被吊销的证书。", indent);
     }
 
     let out=``;
 
     revokedCertificates.forEach((revCert) => {
         if (!Object.hasOwn(revCert, "sn") || !Object.hasOwn(revCert, "date")) {
-            throw new OperationError("invalid revoked certificate object, missing either serial number or date");
+            throw new OperationError("无效的吊销证书对象，缺少序列号或日期。");
         }
 
-        out += `Serial Number: ${revCert.sn.hex.toUpperCase()}
-    Revocation Date: ${generalizedDateTimeToUTC(revCert.date)}\n`;
+        out += `序列号： ${revCert.sn.hex.toUpperCase()}
+    吊销日期： ${generalizedDateTimeToUTC(revCert.date)}\n`;
         if (Object.hasOwn(revCert, "ext") && Array.isArray(revCert.ext) && revCert.ext.length !== 0) {
-            out += `\tCRL entry extensions:\n${indentString(formatCRLEntryExtensions(revCert.ext), 2*indent)}\n`;
+            out += `\tCRL条目扩展：\n${indentString(formatCRLEntryExtensions(revCert.ext), 2*indent)}\n`;
         }
     });
 
@@ -310,25 +312,25 @@ function formatCRLEntryExtensions(exts) {
 
     exts.forEach((ext) => {
         if (!Object.hasOwn(ext, "extname")) {
-            throw new OperationError(`CRL entry extension object missing 'extname' key: ${ext}`);
+            throw new OperationError(`CRL条目扩展对象缺少'extname'键： ${ext}`);
         }
         switch (ext.extname) {
             case "cRLReason":
                 if (!Object.hasOwn(ext, "code")) {
-                    throw new OperationError(`'cRLReason' CRL entry extension missing 'code' key: ${ext}`);
+                    throw new OperationError(`'cRLReason' CRL条目扩展对象缺少'code'键： ${ext}`);
                 }
-                out += `X509v3 CRL Reason Code:
-    ${Object.hasOwn(crlReasonCodeToReasonMessage, ext.code) ? crlReasonCodeToReasonMessage[ext.code] : `invalid reason code: ${ext.code}`}\n`;
+                out += `X509v3 CRL原因编码：
+    ${Object.hasOwn(crlReasonCodeToReasonMessage, ext.code) ? crlReasonCodeToReasonMessage[ext.code] : `无效的原因编码： ${ext.code}`}\n`;
                 break;
             case "2.5.29.23": // Hold instruction
-                out += `Hold Instruction Code:\n\t${Object.hasOwn(holdInstructionOIDToName, ext.extn.oid) ? holdInstructionOIDToName[ext.extn.oid] : `${ext.extn.oid}: unknown hold instruction OID`}\n`;
+                out += `持有指令代码：\n\t${Object.hasOwn(holdInstructionOIDToName, ext.extn.oid) ? holdInstructionOIDToName[ext.extn.oid] : `${ext.extn.oid}: 未知的持有指令OID`}\n`;
                 break;
             case "2.5.29.24": // Invalidity Date
-                out += `Invalidity Date:\n\t${generalizedDateTimeToUTC(ext.extn.gentime.str)}\n`;
+                out += `失效日期：\n\t${generalizedDateTimeToUTC(ext.extn.gentime.str)}\n`;
                 break;
             default:
                 out += `${ext.extname}:\n`;
-                out += `\tUnsupported CRL entry extension. Try openssl CLI.\n`;
+                out += `\t不支持的CRL扩展。试试Openssl命令行。\n`;
                 break;
         }
     });

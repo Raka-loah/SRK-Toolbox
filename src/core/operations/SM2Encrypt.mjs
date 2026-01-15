@@ -2,6 +2,8 @@
  * @author flakjacket95 [dflack95@gmail.com]
  * @copyright Crown Copyright 2024
  * @license Apache-2.0
+ *
+ * Modified by Raka-loah@github
  */
 
 import OperationError from "../errors/OperationError.mjs";
@@ -20,32 +22,32 @@ class SM2Encrypt extends Operation {
     constructor() {
         super();
 
-        this.name = "SM2 Encrypt";
+        this.name = "SM2加密";
         this.module = "Crypto";
-        this.description = "Encrypts a message utilizing the SM2 standard";
-        this.infoURL = ""; // Usually a Wikipedia link. Remember to remove localisation (i.e. https://wikipedia.org/etc rather than https://en.wikipedia.org/etc)
+        this.description = "使用SM2标准加密消息";
+        this.infoURL = "https://zh.wikipedia.org/wiki/SM2";
         this.inputType = "ArrayBuffer";
         this.outputType = "string";
 
         this.args = [
             {
-                name: "Public Key X",
+                name: "公钥X",
                 type: "string",
                 value: "DEADBEEF"
             },
             {
-                name: "Public Key Y",
+                name: "公钥Y",
                 type: "string",
                 value: "DEADBEEF"
             },
             {
-                "name": "Output Format",
+                "name": "输出格式",
                 "type": "option",
                 "value": ["C1C3C2", "C1C2C3"],
                 "defaultIndex": 0
             },
             {
-                name: "Curve",
+                name: "曲线",
                 type: "option",
                 "value": ["sm2p256v1"],
                 "defaultIndex": 0
@@ -63,7 +65,7 @@ class SM2Encrypt extends Operation {
         this.outputFormat = outputFormat;
 
         if (publicKeyX.length !== 64 || publicKeyY.length !== 64) {
-            throw new OperationError("Invalid Public Key - Ensure each component is 32 bytes in size and in hex");
+            throw new OperationError("无效的公钥 - 确保每个公钥都是32字节长度的十六进制");
         }
 
         const sm2 = new SM2(curveName, outputFormat);

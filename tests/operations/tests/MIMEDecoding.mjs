@@ -4,6 +4,8 @@
  * @author mshwed [m@ttshwed.com]
  * @copyright Crown Copyright 2019
  * @license Apache-2.0
+ *
+ * Modified by Raka-loah@github for zh-CN i18n
  */
 
 import TestRegister from "../../lib/TestRegister.mjs";
@@ -15,7 +17,7 @@ TestRegister.addTests([
         expectedOutput: "(a)",
         recipeConfig: [
             {
-                "op": "MIME Decoding",
+                "op": "MIME解码",
                 "args": []
             }
         ]
@@ -26,7 +28,7 @@ TestRegister.addTests([
         expectedOutput: "(a b)",
         recipeConfig: [
             {
-                "op": "MIME Decoding",
+                "op": "MIME解码",
                 "args": []
             }
         ]
@@ -37,7 +39,7 @@ TestRegister.addTests([
         expectedOutput: "(ab)",
         recipeConfig: [
             {
-                "op": "MIME Decoding",
+                "op": "MIME解码",
                 "args": []
             }
         ]
@@ -48,7 +50,7 @@ TestRegister.addTests([
         expectedOutput: "(ab)",
         recipeConfig: [
             {
-                "op": "MIME Decoding",
+                "op": "MIME解码",
                 "args": []
             }
         ]
@@ -59,7 +61,7 @@ TestRegister.addTests([
         expectedOutput: "(ab)",
         recipeConfig: [
             {
-                "op": "MIME Decoding",
+                "op": "MIME解码",
                 "args": []
             }
         ]
@@ -70,7 +72,7 @@ TestRegister.addTests([
         expectedOutput: "Éric <eric@example.org>, Anaïs <anais@example.org>",
         recipeConfig: [
             {
-                "op": "MIME Decoding",
+                "op": "MIME解码",
                 "args": []
             }
         ]
@@ -81,7 +83,7 @@ TestRegister.addTests([
         expectedOutput: "From: Keith Moore <moore@cs.utk.edu>\nTo: Keld Jørn Simonsen <keld@dkuug.dk>\nCC: André Pirard <PIRARD@vm1.ulg.ac.be>\nSubject: If you can read this you understand the example.",
         recipeConfig: [
             {
-                "op": "MIME Decoding",
+                "op": "MIME解码",
                 "args": []
             }
         ]

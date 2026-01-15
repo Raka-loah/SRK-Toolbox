@@ -2,6 +2,8 @@
  * @author bartblaze []
  * @copyright Crown Copyright 2025
  * @license Apache-2.0
+ *
+ * Modified by Raka-loah@github
  */
 
 import TestRegister from "../../lib/TestRegister.mjs";
@@ -13,8 +15,8 @@ TestRegister.addTests([
         expectedOutput: "l337",
         recipeConfig: [
             {
-                op: "Convert Leet Speak",
-                args: ["To Leet Speak"]
+                op: "Leet Speak转换",
+                args: ["Leet Speak编码"]
             }
         ]
     },
@@ -24,8 +26,8 @@ TestRegister.addTests([
         expectedOutput: "leet",
         recipeConfig: [
             {
-                op: "Convert Leet Speak",
-                args: ["From Leet Speak"]
+                op: "Leet Speak转换",
+                args: ["Leet Speak解码"]
             }
         ]
     },
@@ -35,8 +37,8 @@ TestRegister.addTests([
         expectedOutput: "H3LL0",
         recipeConfig: [
             {
-                op: "Convert Leet Speak",
-                args: ["To Leet Speak"]
+                op: "Leet Speak转换",
+                args: ["Leet Speak编码"]
             }
         ]
     },
@@ -46,8 +48,8 @@ TestRegister.addTests([
         expectedOutput: "HeLLo",
         recipeConfig: [
             {
-                op: "Convert Leet Speak",
-                args: ["From Leet Speak"]
+                op: "Leet Speak转换",
+                args: ["Leet Speak解码"]
             }
         ]
     }

@@ -196,7 +196,7 @@ class ParseX509Certificate extends Operation {
 ${issuerStr}
 使用者:
 ${subjectStr}
-Fingerprints
+指纹信息：
   MD5:            ${runHash("md5", hex)}
   SHA1:           ${runHash("sha1", hex)}
   SHA256:         ${runHash("sha256", hex)}

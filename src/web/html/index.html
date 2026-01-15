@@ -63,9 +63,10 @@
                 "正在把emacs和vim符号链接到ed...",
                 "正在训练分支预测...",
                 "正在对缓存命中计时...",
-                "正在猜你要执行什么操作...",
-                "正在添加使用了大型语言模型的错觉...",
-                "解压恶意软件中（吓你的）..."
+                "正在分支预测你要执行什么操作...",
+                "正在添加大语言模型幻觉...",
+                "解压恶意软件中（吓你的）...",
+                "正在载入第114514个功能..."
             ];
 
             // Shuffle array using Durstenfeld algorithm
@@ -573,7 +574,7 @@
                     <div class="modal-body">
                         <img aria-hidden="true" class="about-img-left" src="<%- require('../static/images/srk-128x128.png') %>" alt="SRK Toolbox Logo"/>
                         <p class="subtext">
-                            基于CyberChef版本： <%= htmlWebpackPlugin.options.version %><br>
+                            版本： <%= htmlWebpackPlugin.options.version %><br>
                             编译时间： <%= htmlWebpackPlugin.options.compileTime %>
                         </p>
                         <p><strong>S</strong>miling <strong>R</strong>a<strong>K</strong>a Toolbox是一个非常好用（自称）的网页版编解码加解密工具箱。</p>
@@ -617,7 +618,7 @@
                                     我用SRK Toolbox能干什么？
                                 </a>
                                 <div class="collapse" id="faq-examples">
-                                    <p>SRK Toolbox有<span class="num-ops">数百种</span>操作可以使用，可以方便地搞定很多编解码操作。以下是一些例子：</p>
+                                    <p>SRK Toolbox有<span class="num-ops">数百</span>个操作可以使用，可以方便地搞定很多编解码操作。以下是一些例子：</p>
                                     <ul>
                                         <li><a href="#recipe=Base64解码('A-Za-z0-9%2B/%3D',true)&input=VTI4Z2JHOXVaeUJoYm1RZ2RHaGhibXR6SUdadmNpQmhiR3dnZEdobElHWnBjMmd1">Base64字符串解码</a></li>
                                         <li><a href="#recipe=转换DateTime格式('Standard%20date%20and%20time','DD/MM/YYYY%20HH:mm:ss','UTC','dddd%20Do%20MMMM%20YYYY%20HH:mm:ss%20Z%20z','Australia/Queensland')&input=MTUvMDYvMjAxNSAyMDo0NTowMA">把日期时间转换到别的时区</a></li>
@@ -763,10 +764,10 @@
                                 <input type="text" class="form-control toggle-string" id="input-filter">
                             </div>
                             <div class="input-group-append">
-                                <button class="btn btn-secondary dropdown-toggle" id="input-filter-button" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">CONTENT</button>
+                                <button class="btn btn-secondary dropdown-toggle" id="input-filter-button" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">内容</button>
                                 <div class="dropdown-menu toggle-dropdown">
-                                    <a class="dropdown-item" id="input-filter-content" title="内容">Content</a>
-                                    <a class="dropdown-item" id="input-filter-filename" title="文件名">Filename</a>
+                                    <a class="dropdown-item" id="input-filter-content" title="内容">内容</a>
+                                    <a class="dropdown-item" id="input-filter-filename" title="文件名">文件名</a>
                                 </div>
                             </div>
                         </div>

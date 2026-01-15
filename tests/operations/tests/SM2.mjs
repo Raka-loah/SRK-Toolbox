@@ -4,6 +4,8 @@
  * @author flakjacket95 [dflack95@gmail.com]
  * @copyright Crown Copyright 2024
  * @license Apache-2.0
+ *
+ * Modified by Raka-loah@github
  */
 import TestRegister from "../../lib/TestRegister.mjs";
 
@@ -34,7 +36,7 @@ TestRegister.addTests([
         expectedOutput: SMALL_PLAIN,
         recipeConfig: [
             {
-                "op": "SM2 Decrypt",
+                "op": "SM2解密",
                 "args": [PRIVATE_K, "C1C3C2", CURVE]
             }
         ]
@@ -45,7 +47,7 @@ TestRegister.addTests([
         expectedOutput: LARGE_PLAIN,
         recipeConfig: [
             {
-                "op": "SM2 Decrypt",
+                "op": "SM2解密",
                 "args": [PRIVATE_K, "C1C3C2", CURVE]
             }
         ]
@@ -56,7 +58,7 @@ TestRegister.addTests([
         expectedOutput: SMALL_PLAIN,
         recipeConfig: [
             {
-                "op": "SM2 Decrypt",
+                "op": "SM2解密",
                 "args": [PRIVATE_K, "C1C2C3", CURVE]
             }
         ]
@@ -67,7 +69,7 @@ TestRegister.addTests([
         expectedOutput: LARGE_PLAIN,
         recipeConfig: [
             {
-                "op": "SM2 Decrypt",
+                "op": "SM2解密",
                 "args": [PRIVATE_K, "C1C2C3", CURVE]
             }
         ]
@@ -78,11 +80,11 @@ TestRegister.addTests([
         expectedOutput: SMALL_PLAIN,
         recipeConfig: [
             {
-                "op": "SM2 Encrypt",
+                "op": "SM2加密",
                 "args": [PUBLIC_X, PUBLIC_Y, "C1C3C2", CURVE],
             },
             {
-                "op": "SM2 Decrypt",
+                "op": "SM2解密",
                 "args": [PRIVATE_K, "C1C3C2", CURVE]
             }
         ]
@@ -93,11 +95,11 @@ TestRegister.addTests([
         expectedOutput: LARGE_PLAIN,
         recipeConfig: [
             {
-                "op": "SM2 Encrypt",
+                "op": "SM2加密",
                 "args": [PUBLIC_X, PUBLIC_Y, "C1C3C2", CURVE],
             },
             {
-                "op": "SM2 Decrypt",
+                "op": "SM2解密",
                 "args": [PRIVATE_K, "C1C3C2", CURVE]
             }
         ]
@@ -108,11 +110,11 @@ TestRegister.addTests([
         expectedOutput: SMALL_PLAIN,
         recipeConfig: [
             {
-                "op": "SM2 Encrypt",
+                "op": "SM2加密",
                 "args": [PUBLIC_X, PUBLIC_Y, "C1C2C3", CURVE],
             },
             {
-                "op": "SM2 Decrypt",
+                "op": "SM2解密",
                 "args": [PRIVATE_K, "C1C2C2", CURVE]
             }
         ]
@@ -123,11 +125,11 @@ TestRegister.addTests([
         expectedOutput: LARGE_PLAIN,
         recipeConfig: [
             {
-                "op": "SM2 Encrypt",
+                "op": "SM2加密",
                 "args": [PUBLIC_X, PUBLIC_Y, "C1C2C3", CURVE],
             },
             {
-                "op": "SM2 Decrypt",
+                "op": "SM2解密",
                 "args": [PRIVATE_K, "C1C2C3", CURVE]
             }
         ]

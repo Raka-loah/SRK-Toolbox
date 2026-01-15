@@ -19,7 +19,7 @@ class StripHTTPHeaders extends Operation {
     constructor() {
         super();
 
-        this.name = "删除HTTP头部";
+        this.name = "移除HTTP标头";
         this.module = "Default";
         this.description = "从HTTP请求或响应文本中删除请求头或响应头，使用首次出现的两个换行符作为定位。";
         this.infoURL = "https://wikipedia.org/wiki/Hypertext_Transfer_Protocol#Message_format";

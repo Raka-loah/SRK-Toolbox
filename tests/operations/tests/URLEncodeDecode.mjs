@@ -5,6 +5,8 @@
  *
  * @copyright Crown Copyright 2018
  * @license Apache-2.0
+ *
+ * Modified by Raka-loah@github for zh-CN i18n
  */
 
 import TestRegister from "../../lib/TestRegister.mjs";
@@ -17,7 +19,7 @@ TestRegister.addTests([
         expectedOutput: "",
         recipeConfig: [
             {
-                op: "URL Decode",
+                op: "URL解码",
                 args: [],
             },
         ],
@@ -28,7 +30,7 @@ TestRegister.addTests([
         expectedOutput: "Hello world!",
         recipeConfig: [
             {
-                op: "URL Decode",
+                op: "URL解码",
                 args: [],
             },
         ],
@@ -39,7 +41,7 @@ TestRegister.addTests([
         expectedOutput: "Hello world!",
         recipeConfig: [
             {
-                op: "URL Decode",
+                op: "URL解码",
                 args: [],
             },
         ],
@@ -50,7 +52,7 @@ TestRegister.addTests([
         expectedOutput: "Hello world!",
         recipeConfig: [
             {
-                op: "URL Decode",
+                op: "URL解码",
                 args: [],
             },
         ],
@@ -62,7 +64,7 @@ TestRegister.addTests([
         expectedOutput: "",
         recipeConfig: [
             {
-                op: "URL Encode",
+                op: "URL编码",
                 args: [],
             },
         ],
@@ -73,7 +75,7 @@ TestRegister.addTests([
         expectedOutput: "Hello%20world!",
         recipeConfig: [
             {
-                op: "URL Encode",
+                op: "URL编码",
                 args: [],
             },
         ],
@@ -84,7 +86,7 @@ TestRegister.addTests([
         expectedOutput: "Hello%20world%21",
         recipeConfig: [
             {
-                op: "URL Encode",
+                op: "URL编码",
                 args: [true],
             },
         ],

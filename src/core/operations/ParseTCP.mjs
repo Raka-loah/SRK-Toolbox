@@ -28,7 +28,7 @@ class ParseTCP extends Operation {
 
         this.name = "解析TCP";
         this.module = "Default";
-        this.description = "解析TCP首部和载荷（如果有）。";
+        this.description = "解析TCP标头和载荷（如果有）。";
         this.infoURL = "https://wikipedia.org/wiki/Transmission_Control_Protocol";
         this.inputType = "string";
         this.outputType = "json";
@@ -60,7 +60,7 @@ class ParseTCP extends Operation {
 
         const s = new Stream(new Uint8Array(input));
         if (s.length < 20) {
-            throw new OperationError("TCP首部需要至少20字节。");
+            throw new OperationError("TCP标头需要至少20字节。");
         }
 
         // Parse Header

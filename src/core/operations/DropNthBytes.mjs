@@ -2,6 +2,8 @@
  * @author Oshawk [oshawk@protonmail.com]
  * @copyright Crown Copyright 2019
  * @license Apache-2.0
+ *
+ * Modified by Raka-loah@github for zh-CN i18n
  */
 
 import Operation from "../Operation.mjs";
@@ -18,25 +20,25 @@ class DropNthBytes extends Operation {
     constructor() {
         super();
 
-        this.name = "Drop nth bytes";
+        this.name = "删除每N个字节";
         this.module = "Default";
-        this.description = "Drops every nth byte starting with a given byte.";
+        this.description = "删除字符串的每N个字节。";
         this.infoURL = "";
         this.inputType = "byteArray";
         this.outputType = "byteArray";
         this.args = [
             {
-                name: "Drop every",
+                name: "删除每N个字节",
                 type: "number",
                 value: 4
             },
             {
-                name: "Starting at",
+                name: "起始位置",
                 type: "number",
                 value: 0
             },
             {
-                name: "Apply to each line",
+                name: "应用到每一行",
                 type: "boolean",
                 value: false
             }
@@ -54,10 +56,10 @@ class DropNthBytes extends Operation {
         const eachLine = args[2];
 
         if (parseInt(n, 10) !== n || n <= 0) {
-            throw new OperationError("'Drop every' must be a positive integer.");
+            throw new OperationError("'删除每N个字节'必须为正整数");
         }
         if (parseInt(start, 10) !== start || start < 0) {
-            throw new OperationError("'Starting at' must be a positive or zero integer.");
+            throw new OperationError("'起始位置'必须为非负整数");
         }
 
         let offset = 0;

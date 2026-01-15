@@ -6,6 +6,8 @@
  * @author n1474335 [n1474335@gmail.com]
  * @copyright Crown Copyright 2019
  * @license Apache-2.0
+ *
+ * Modified by Raka-loah@github
  */
 
 import Utils from "../../core/Utils.mjs";
@@ -917,15 +919,15 @@ self.filterTabs = function(searchData) {
             self.inputs[iNum].status === "loaded" && showLoaded) {
             try {
                 if (self.inputs[iNum].type === "userinput") {
-                    if (filterType.toLowerCase() === "content" &&
+                    if (filterType.toLowerCase() === "内容" &&
                         filterExp.test(self.inputs[iNum].stringSample)) {
                         textDisplay = self.inputs[iNum].stringSample;
                         addInput = true;
                     }
                 } else {
-                    if ((filterType.toLowerCase() === "filename" &&
+                    if ((filterType.toLowerCase() === "文件名" &&
                         filterExp.test(self.inputs[iNum].file.name)) ||
-                        (filterType.toLowerCase() === "content" &&
+                        (filterType.toLowerCase() === "内容" &&
                         filterExp.test(self.inputs[iNum].stringSample))) {
                         textDisplay = self.inputs[iNum].file.name;
                         addInput = true;
@@ -942,7 +944,7 @@ self.filterTabs = function(searchData) {
 
         if (addInput) {
             if (textDisplay === "" || textDisplay === undefined) {
-                textDisplay = "New Tab";
+                textDisplay = "新标签";
             }
             const inputItem = {
                 inputNum: iNum,

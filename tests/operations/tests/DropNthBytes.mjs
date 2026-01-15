@@ -2,6 +2,8 @@
  * @author Oshawk [oshawk@protonmail.com]
  * @copyright Crown Copyright 2019
  * @license Apache-2.0
+ *
+ * Modified by Raka-loah@github
  */
 
 import TestRegister from "../../lib/TestRegister.mjs";
@@ -16,7 +18,7 @@ TestRegister.addTests([
         expectedOutput: "",
         recipeConfig: [
             {
-                op: "Drop nth bytes",
+                op: "删除每N个字节",
                 args: [4, 0, false],
             },
         ],
@@ -27,7 +29,7 @@ TestRegister.addTests([
         expectedOutput: "",
         recipeConfig: [
             {
-                op: "Drop nth bytes",
+                op: "删除每N个字节",
                 args: [4, 0, true],
             },
         ],
@@ -38,7 +40,7 @@ TestRegister.addTests([
         expectedOutput: "1235679",
         recipeConfig: [
             {
-                op: "Drop nth bytes",
+                op: "删除每N个字节",
                 args: [4, 0, false],
             },
         ],
@@ -49,7 +51,7 @@ TestRegister.addTests([
         expectedOutput: "1235679",
         recipeConfig: [
             {
-                op: "Drop nth bytes",
+                op: "删除每N个字节",
                 args: [4, 0, true],
             },
         ],
@@ -60,7 +62,7 @@ TestRegister.addTests([
         expectedOutput: "01234678",
         recipeConfig: [
             {
-                op: "Drop nth bytes",
+                op: "删除每N个字节",
                 args: [4, 5, false],
             },
         ],
@@ -71,7 +73,7 @@ TestRegister.addTests([
         expectedOutput: "01234678",
         recipeConfig: [
             {
-                op: "Drop nth bytes",
+                op: "删除每N个字节",
                 args: [4, 5, true],
             },
         ],
@@ -82,7 +84,7 @@ TestRegister.addTests([
         expectedOutput: "123\n5689",
         recipeConfig: [
             {
-                op: "Drop nth bytes",
+                op: "删除每N个字节",
                 args: [4, 0, false],
             },
         ],
@@ -93,7 +95,7 @@ TestRegister.addTests([
         expectedOutput: "123\n678",
         recipeConfig: [
             {
-                op: "Drop nth bytes",
+                op: "删除每N个字节",
                 args: [4, 0, true],
             },
         ],
@@ -104,7 +106,7 @@ TestRegister.addTests([
         expectedOutput: "012345679",
         recipeConfig: [
             {
-                op: "Drop nth bytes",
+                op: "删除每N个字节",
                 args: [4, 5, false],
             },
         ],
@@ -115,7 +117,7 @@ TestRegister.addTests([
         expectedOutput: "01234\n6789a",
         recipeConfig: [
             {
-                op: "Drop nth bytes",
+                op: "删除每N个字节",
                 args: [4, 5, true],
             },
         ],

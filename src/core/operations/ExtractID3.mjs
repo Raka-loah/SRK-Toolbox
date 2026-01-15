@@ -45,7 +45,7 @@ class ExtractID3 extends Operation {
          */
         function extractHeader() {
             if (!Array.from(input.slice(0, 3)).equals([0x49, 0x44, 0x33]))
-                throw new OperationError("未找到有效的ID3头部。");
+                throw new OperationError("未找到有效的ID3标头。");
 
             const header = {
                 "Type": "ID3",

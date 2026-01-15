@@ -116,6 +116,8 @@ class App {
         this.manager.input.calcMaxTabs();
         this.manager.output.calcMaxTabs();
 
+        this.manager.ops.setCatCount();
+
         toastr.options = {
             "closeButton": false,
             "debug": false,

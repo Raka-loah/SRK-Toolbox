@@ -4,6 +4,8 @@
  * @author r4mos [2k95ljkhg@mozmail.com]
  * @copyright Crown Copyright 2025
  * @license Apache-2.0
+ *
+ * Modified by Raka-loah@github for zh-CN i18n
  */
 import TestRegister from "../../lib/TestRegister.mjs";
 
@@ -192,8 +194,8 @@ CRC-82/DARC:              09ea83f625023801fd612
 `,
         recipeConfig: [
             {
-                "op": "Generate all checksums",
-                "args": ["All", true]
+                "op": "生成所有校验和",
+                "args": ["全部", true]
             }
         ]
     },
@@ -379,8 +381,8 @@ e9c6d914c4b8d9ca
 `,
         recipeConfig: [
             {
-                "op": "Generate all checksums",
-                "args": ["All", false]
+                "op": "生成所有校验和",
+                "args": ["全部", false]
             }
         ]
     },
@@ -392,7 +394,7 @@ CRC-3/ROHC:               6
 `,
         recipeConfig: [
             {
-                "op": "Generate all checksums",
+                "op": "生成所有校验和",
                 "args": ["3", true]
             }
         ]
@@ -406,7 +408,7 @@ CRC-4/ITU:                7
 `,
         recipeConfig: [
             {
-                "op": "Generate all checksums",
+                "op": "生成所有校验和",
                 "args": ["4", true]
             }
         ]
@@ -422,7 +424,7 @@ CRC-5/USB:                19
 `,
         recipeConfig: [
             {
-                "op": "Generate all checksums",
+                "op": "生成所有校验和",
                 "args": ["5", true]
             }
         ]
@@ -439,7 +441,7 @@ CRC-6/ITU:                06
 `,
         recipeConfig: [
             {
-                "op": "Generate all checksums",
+                "op": "生成所有校验和",
                 "args": ["6", true]
             }
         ]
@@ -453,7 +455,7 @@ CRC-7/UMTS:               61
 `,
         recipeConfig: [
             {
-                "op": "Generate all checksums",
+                "op": "生成所有校验和",
                 "args": ["7", true]
             }
         ]
@@ -492,7 +494,7 @@ Fletcher-8:               0c
 `,
         recipeConfig: [
             {
-                "op": "Generate all checksums",
+                "op": "生成所有校验和",
                 "args": ["8", true]
             }
         ]
@@ -507,7 +509,7 @@ CRC-10/I-610:             199
 `,
         recipeConfig: [
             {
-                "op": "Generate all checksums",
+                "op": "生成所有校验和",
                 "args": ["10", true]
             }
         ]
@@ -520,7 +522,7 @@ CRC-11/UMTS:              061
 `,
         recipeConfig: [
             {
-                "op": "Generate all checksums",
+                "op": "生成所有校验和",
                 "args": ["11", true]
             }
         ]
@@ -536,7 +538,7 @@ CRC-12/UMTS:              daf
 `,
         recipeConfig: [
             {
-                "op": "Generate all checksums",
+                "op": "生成所有校验和",
                 "args": ["12", true]
             }
         ]
@@ -548,7 +550,7 @@ CRC-12/UMTS:              daf
 `,
         recipeConfig: [
             {
-                "op": "Generate all checksums",
+                "op": "生成所有校验和",
                 "args": ["13", true]
             }
         ]
@@ -561,7 +563,7 @@ CRC-14/GSM:               30ae
 `,
         recipeConfig: [
             {
-                "op": "Generate all checksums",
+                "op": "生成所有校验和",
                 "args": ["14", true]
             }
         ]
@@ -574,7 +576,7 @@ CRC-15/MPT1327:           2566
 `,
         recipeConfig: [
             {
-                "op": "Generate all checksums",
+                "op": "生成所有校验和",
                 "args": ["15", true]
             }
         ]
@@ -645,7 +647,7 @@ Fletcher-16:              1ede
 `,
         recipeConfig: [
             {
-                "op": "Generate all checksums",
+                "op": "生成所有校验和",
                 "args": ["16", true]
             }
         ]
@@ -657,7 +659,7 @@ Fletcher-16:              1ede
 `,
         recipeConfig: [
             {
-                "op": "Generate all checksums",
+                "op": "生成所有校验和",
                 "args": ["17", true]
             }
         ]
@@ -669,7 +671,7 @@ Fletcher-16:              1ede
 `,
         recipeConfig: [
             {
-                "op": "Generate all checksums",
+                "op": "生成所有校验和",
                 "args": ["21", true]
             }
         ]
@@ -688,7 +690,7 @@ CRC-24/OS-9:              200fa5
 `,
         recipeConfig: [
             {
-                "op": "Generate all checksums",
+                "op": "生成所有校验和",
                 "args": ["24", true]
             }
         ]
@@ -700,7 +702,7 @@ CRC-24/OS-9:              200fa5
 `,
         recipeConfig: [
             {
-                "op": "Generate all checksums",
+                "op": "生成所有校验和",
                 "args": ["30", true]
             }
         ]
@@ -712,7 +714,7 @@ CRC-24/OS-9:              200fa5
 `,
         recipeConfig: [
             {
-                "op": "Generate all checksums",
+                "op": "生成所有校验和",
                 "args": ["31", true]
             }
         ]
@@ -753,7 +755,7 @@ Fletcher-32:              df09d509
 `,
         recipeConfig: [
             {
-                "op": "Generate all checksums",
+                "op": "生成所有校验和",
                 "args": ["32", true]
             }
         ]
@@ -765,7 +767,7 @@ Fletcher-32:              df09d509
 `,
         recipeConfig: [
             {
-                "op": "Generate all checksums",
+                "op": "生成所有校验和",
                 "args": ["40", true]
             }
         ]
@@ -785,7 +787,7 @@ Fletcher-64:              0d0803376c6a689f
 `,
         recipeConfig: [
             {
-                "op": "Generate all checksums",
+                "op": "生成所有校验和",
                 "args": ["64", true]
             }
         ]
@@ -797,7 +799,7 @@ Fletcher-64:              0d0803376c6a689f
 `,
         recipeConfig: [
             {
-                "op": "Generate all checksums",
+                "op": "生成所有校验和",
                 "args": ["82", true]
             }
         ]

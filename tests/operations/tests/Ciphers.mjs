@@ -536,7 +536,7 @@ TestRegister.addTests([
         expectedOutput: "  e  n ut.ooeepcstesaihIqiiinNnxthpsnso",
         recipeConfig: [
             {
-                "op": "Rail Fence Cipher Encode",
+                "op": "篱笆密码加密",
                 "args": [3, 2]
             }
         ],

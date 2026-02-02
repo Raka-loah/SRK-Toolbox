@@ -26,6 +26,8 @@
             "Base45解码",
             "Base58编码",
             "Base58解码",
+            "To Bech32",
+            "From Bech32",
             "Base62编码",
             "Base62解码",
             "Base64编码",

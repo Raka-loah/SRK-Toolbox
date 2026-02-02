@@ -38,8 +38,8 @@ TestRegister.addTests([
         expectedOutput: "t13d181220_85036bcba153_d41ae481755e",
         recipeConfig: [
             {
-                "op": "JA4 Fingerprint",
-                "args": ["Hex", "JA4"]
+                "op": "JA4指纹",
+                "args": ["十六进制", "JA4"]
             }
         ],
     },
@@ -49,8 +49,8 @@ TestRegister.addTests([
         expectedOutput: "t13d181260_85036bcba153_d41ae481755e",
         recipeConfig: [
             {
-                "op": "JA4 Fingerprint",
-                "args": ["Hex", "JA4"]
+                "op": "JA4指纹",
+                "args": ["十六进制", "JA4"]
             }
         ],
     },

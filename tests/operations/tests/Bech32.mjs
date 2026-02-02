@@ -23,8 +23,8 @@ TestRegister.addTests([
         expectedOutput: "bc1gmk9yu",
         recipeConfig: [
             {
-                "op": "To Bech32",
-                "args": ["bc", "Bech32", "Raw bytes", "Generic", 0]
+                "op": "Bech32编码",
+                "args": ["bc", "Bech32", "原始字节", "通用", 0]
             }
         ],
     },
@@ -34,8 +34,8 @@ TestRegister.addTests([
         expectedOutput: "bc1gyufle22",
         recipeConfig: [
             {
-                "op": "To Bech32",
-                "args": ["bc", "Bech32", "Raw bytes", "Generic", 0]
+                "op": "Bech32编码",
+                "args": ["bc", "Bech32", "原始字节", "通用", 0]
             }
         ],
     },
@@ -45,8 +45,8 @@ TestRegister.addTests([
         expectedOutput: "bc1fpjkcmr0gzsgcg",
         recipeConfig: [
             {
-                "op": "To Bech32",
-                "args": ["bc", "Bech32", "Raw bytes", "Generic", 0]
+                "op": "Bech32编码",
+                "args": ["bc", "Bech32", "原始字节", "通用", 0]
             }
         ],
     },
@@ -56,8 +56,8 @@ TestRegister.addTests([
         expectedOutput: "custom1w3jhxaq593qur",
         recipeConfig: [
             {
-                "op": "To Bech32",
-                "args": ["custom", "Bech32", "Raw bytes", "Generic", 0]
+                "op": "Bech32编码",
+                "args": ["custom", "Bech32", "原始字节", "通用", 0]
             }
         ],
     },
@@ -67,8 +67,8 @@ TestRegister.addTests([
         expectedOutput: "tb1v3shgcg3x07jr",
         recipeConfig: [
             {
-                "op": "To Bech32",
-                "args": ["tb", "Bech32", "Raw bytes", "Generic", 0]
+                "op": "Bech32编码",
+                "args": ["tb", "Bech32", "原始字节", "通用", 0]
             }
         ],
     },
@@ -78,8 +78,8 @@ TestRegister.addTests([
         expectedOutput: "bc1a8xfp7",
         recipeConfig: [
             {
-                "op": "To Bech32",
-                "args": ["bc", "Bech32m", "Raw bytes", "Generic", 0]
+                "op": "Bech32编码",
+                "args": ["bc", "Bech32m", "原始字节", "通用", 0]
             }
         ],
     },
@@ -89,8 +89,8 @@ TestRegister.addTests([
         expectedOutput: "bc1gyf4040g",
         recipeConfig: [
             {
-                "op": "To Bech32",
-                "args": ["bc", "Bech32m", "Raw bytes", "Generic", 0]
+                "op": "Bech32编码",
+                "args": ["bc", "Bech32m", "原始字节", "通用", 0]
             }
         ],
     },
@@ -100,8 +100,8 @@ TestRegister.addTests([
         expectedOutput: "bc1fpjkcmr0a7qya2",
         recipeConfig: [
             {
-                "op": "To Bech32",
-                "args": ["bc", "Bech32m", "Raw bytes", "Generic", 0]
+                "op": "Bech32编码",
+                "args": ["bc", "Bech32m", "原始字节", "通用", 0]
             }
         ],
     },
@@ -111,8 +111,8 @@ TestRegister.addTests([
         expectedOutput: "Human-Readable Part (HRP) cannot be empty.",
         recipeConfig: [
             {
-                "op": "To Bech32",
-                "args": ["", "Bech32", "Raw bytes", "Generic", 0]
+                "op": "Bech32编码",
+                "args": ["", "Bech32", "原始字节", "通用", 0]
             }
         ],
     },
@@ -124,8 +124,8 @@ TestRegister.addTests([
         expectedOutput: "A",
         recipeConfig: [
             {
-                "op": "From Bech32",
-                "args": ["Bech32", "Raw"]
+                "op": "Bech32解码",
+                "args": ["Bech32", "原始"]
             }
         ],
     },
@@ -135,8 +135,8 @@ TestRegister.addTests([
         expectedOutput: "Hello",
         recipeConfig: [
             {
-                "op": "From Bech32",
-                "args": ["Bech32", "Raw"]
+                "op": "Bech32解码",
+                "args": ["Bech32", "原始"]
             }
         ],
     },
@@ -146,8 +146,8 @@ TestRegister.addTests([
         expectedOutput: "Hello",
         recipeConfig: [
             {
-                "op": "From Bech32",
-                "args": ["Auto-detect", "Raw"]
+                "op": "Bech32解码",
+                "args": ["自动检测", "原始"]
             }
         ],
     },
@@ -157,8 +157,8 @@ TestRegister.addTests([
         expectedOutput: "Hello",
         recipeConfig: [
             {
-                "op": "From Bech32",
-                "args": ["Bech32m", "Raw"]
+                "op": "Bech32解码",
+                "args": ["Bech32m", "原始"]
             }
         ],
     },
@@ -168,8 +168,8 @@ TestRegister.addTests([
         expectedOutput: "Hello",
         recipeConfig: [
             {
-                "op": "From Bech32",
-                "args": ["Auto-detect", "Raw"]
+                "op": "Bech32解码",
+                "args": ["自动检测", "原始"]
             }
         ],
     },
@@ -179,8 +179,8 @@ TestRegister.addTests([
         expectedOutput: "Hello",
         recipeConfig: [
             {
-                "op": "From Bech32",
-                "args": ["Auto-detect", "Raw"]
+                "op": "Bech32解码",
+                "args": ["自动检测", "原始"]
             }
         ],
     },
@@ -190,8 +190,8 @@ TestRegister.addTests([
         expectedOutput: "test",
         recipeConfig: [
             {
-                "op": "From Bech32",
-                "args": ["Bech32", "Raw"]
+                "op": "Bech32解码",
+                "args": ["Bech32", "原始"]
             }
         ],
     },
@@ -201,8 +201,8 @@ TestRegister.addTests([
         expectedOutput: "",
         recipeConfig: [
             {
-                "op": "From Bech32",
-                "args": ["Auto-detect", "Hex"]
+                "op": "Bech32解码",
+                "args": ["自动检测", "十六进制"]
             }
         ],
     },
@@ -212,8 +212,8 @@ TestRegister.addTests([
         expectedOutput: "",
         recipeConfig: [
             {
-                "op": "From Bech32",
-                "args": ["Bech32", "Hex"]
+                "op": "Bech32解码",
+                "args": ["Bech32", "十六进制"]
             }
         ],
     },
@@ -225,7 +225,7 @@ TestRegister.addTests([
         expectedOutput: "bc: 48656c6c6f",
         recipeConfig: [
             {
-                "op": "From Bech32",
+                "op": "Bech32解码",
                 "args": ["Bech32", "HRP: Hex"]
             }
         ],
@@ -236,7 +236,7 @@ TestRegister.addTests([
         expectedOutput: "{\n  \"hrp\": \"bc\",\n  \"encoding\": \"Bech32\",\n  \"data\": \"48656c6c6f\"\n}",
         recipeConfig: [
             {
-                "op": "From Bech32",
+                "op": "Bech32解码",
                 "args": ["Bech32", "JSON"]
             }
         ],
@@ -247,8 +247,8 @@ TestRegister.addTests([
         expectedOutput: "48656c6c6f",
         recipeConfig: [
             {
-                "op": "From Bech32",
-                "args": ["Bech32", "Hex"]
+                "op": "Bech32解码",
+                "args": ["Bech32", "十六进制"]
             }
         ],
     },
@@ -261,8 +261,8 @@ TestRegister.addTests([
         expectedOutput: "age: b58fa5d7e3ac0bc732609082acc6834fd980ce4b8c4052d2bec2d5130acf8421",
         recipeConfig: [
             {
-                "op": "From Bech32",
-                "args": ["Auto-detect", "HRP: Hex"]
+                "op": "Bech32解码",
+                "args": ["自动检测", "HRP: Hex"]
             }
         ],
     },
@@ -272,8 +272,8 @@ TestRegister.addTests([
         expectedOutput: "age-secret-key-: 1526a89a95257259ff619df5913400315873c57bb4a229268031b76989430a4c",
         recipeConfig: [
             {
-                "op": "From Bech32",
-                "args": ["Auto-detect", "HRP: Hex"]
+                "op": "Bech32解码",
+                "args": ["自动检测", "HRP: Hex"]
             }
         ],
     },
@@ -283,8 +283,8 @@ TestRegister.addTests([
         expectedOutput: "age: 9b97e4581ee359dff5009fbe7ed648973ce5e676415540b38064fd84e064d714",
         recipeConfig: [
             {
-                "op": "From Bech32",
-                "args": ["Auto-detect", "HRP: Hex"]
+                "op": "Bech32解码",
+                "args": ["自动检测", "HRP: Hex"]
             }
         ],
     },
@@ -294,8 +294,8 @@ TestRegister.addTests([
         expectedOutput: "age-secret-key-: 8fb6f23331c7f5b3e2b9597eab735e484179096ea57c06d31678e9da2de51225",
         recipeConfig: [
             {
-                "op": "From Bech32",
-                "args": ["Auto-detect", "HRP: Hex"]
+                "op": "Bech32解码",
+                "args": ["自动检测", "HRP: Hex"]
             }
         ],
     },
@@ -305,8 +305,8 @@ TestRegister.addTests([
         expectedOutput: "{\n  \"hrp\": \"age\",\n  \"encoding\": \"Bech32\",\n  \"data\": \"b58fa5d7e3ac0bc732609082acc6834fd980ce4b8c4052d2bec2d5130acf8421\"\n}",
         recipeConfig: [
             {
-                "op": "From Bech32",
-                "args": ["Auto-detect", "JSON"]
+                "op": "Bech32解码",
+                "args": ["自动检测", "JSON"]
             }
         ],
     },
@@ -318,8 +318,8 @@ TestRegister.addTests([
         expectedOutput: "Invalid Bech32 string: mixed case is not allowed. Use all uppercase or all lowercase.",
         recipeConfig: [
             {
-                "op": "From Bech32",
-                "args": ["Auto-detect", "Hex"]
+                "op": "Bech32解码",
+                "args": ["自动检测", "十六进制"]
             }
         ],
     },
@@ -329,8 +329,8 @@ TestRegister.addTests([
         expectedOutput: "Invalid Bech32 string: no separator '1' found.",
         recipeConfig: [
             {
-                "op": "From Bech32",
-                "args": ["Auto-detect", "Hex"]
+                "op": "Bech32解码",
+                "args": ["自动检测", "十六进制"]
             }
         ],
     },
@@ -340,8 +340,8 @@ TestRegister.addTests([
         expectedOutput: "Invalid Bech32 string: Human-Readable Part (HRP) cannot be empty.",
         recipeConfig: [
             {
-                "op": "From Bech32",
-                "args": ["Auto-detect", "Hex"]
+                "op": "Bech32解码",
+                "args": ["自动检测", "十六进制"]
             }
         ],
     },
@@ -351,8 +351,8 @@ TestRegister.addTests([
         expectedOutput: "Invalid Bech32/Bech32m string: checksum verification failed.",
         recipeConfig: [
             {
-                "op": "From Bech32",
-                "args": ["Auto-detect", "Hex"]
+                "op": "Bech32解码",
+                "args": ["自动检测", "十六进制"]
             }
         ],
     },
@@ -362,8 +362,8 @@ TestRegister.addTests([
         expectedOutput: "Invalid Bech32 string: data part is too short (minimum 6 characters for checksum).",
         recipeConfig: [
             {
-                "op": "From Bech32",
-                "args": ["Auto-detect", "Hex"]
+                "op": "Bech32解码",
+                "args": ["自动检测", "十六进制"]
             }
         ],
     },
@@ -373,8 +373,8 @@ TestRegister.addTests([
         expectedOutput: "Invalid Bech32m checksum.",
         recipeConfig: [
             {
-                "op": "From Bech32",
-                "args": ["Bech32m", "Hex"]
+                "op": "Bech32解码",
+                "args": ["Bech32m", "十六进制"]
             }
         ],
     },
@@ -386,8 +386,8 @@ TestRegister.addTests([
         expectedOutput: "",
         recipeConfig: [
             {
-                "op": "From Bech32",
-                "args": ["Bech32", "Hex"]
+                "op": "Bech32解码",
+                "args": ["Bech32", "十六进制"]
             }
         ],
     },
@@ -397,8 +397,8 @@ TestRegister.addTests([
         expectedOutput: "",
         recipeConfig: [
             {
-                "op": "From Bech32",
-                "args": ["Bech32", "Hex"]
+                "op": "Bech32解码",
+                "args": ["Bech32", "十六进制"]
             }
         ],
     },
@@ -408,8 +408,8 @@ TestRegister.addTests([
         expectedOutput: "",
         recipeConfig: [
             {
-                "op": "From Bech32",
-                "args": ["Bech32", "Hex"]
+                "op": "Bech32解码",
+                "args": ["Bech32", "十六进制"]
             }
         ],
     },
@@ -419,7 +419,7 @@ TestRegister.addTests([
         expectedOutput: "abcdef: 00443214c74254b635cf84653a56d7c675be77df",
         recipeConfig: [
             {
-                "op": "From Bech32",
+                "op": "Bech32解码",
                 "args": ["Bech32", "HRP: Hex"]
             }
         ],
@@ -430,7 +430,7 @@ TestRegister.addTests([
         expectedOutput: "split: c5f38b70305f519bf66d85fb6cf03058f3dde463ecd7918f2dc743918f2d",
         recipeConfig: [
             {
-                "op": "From Bech32",
+                "op": "Bech32解码",
                 "args": ["Bech32", "HRP: Hex"]
             }
         ],
@@ -441,8 +441,8 @@ TestRegister.addTests([
         expectedOutput: "",
         recipeConfig: [
             {
-                "op": "From Bech32",
-                "args": ["Bech32", "Hex"]
+                "op": "Bech32解码",
+                "args": ["Bech32", "十六进制"]
             }
         ],
     },
@@ -454,8 +454,8 @@ TestRegister.addTests([
         expectedOutput: "",
         recipeConfig: [
             {
-                "op": "From Bech32",
-                "args": ["Bech32m", "Hex"]
+                "op": "Bech32解码",
+                "args": ["Bech32m", "十六进制"]
             }
         ],
     },
@@ -465,8 +465,8 @@ TestRegister.addTests([
         expectedOutput: "",
         recipeConfig: [
             {
-                "op": "From Bech32",
-                "args": ["Bech32m", "Hex"]
+                "op": "Bech32解码",
+                "args": ["Bech32m", "十六进制"]
             }
         ],
     },
@@ -476,8 +476,8 @@ TestRegister.addTests([
         expectedOutput: "",
         recipeConfig: [
             {
-                "op": "From Bech32",
-                "args": ["Bech32m", "Hex"]
+                "op": "Bech32解码",
+                "args": ["Bech32m", "十六进制"]
             }
         ],
     },
@@ -487,7 +487,7 @@ TestRegister.addTests([
         expectedOutput: "abcdef: ffbbcdeb38bdab49ca307b9ac5a928398a418820",
         recipeConfig: [
             {
-                "op": "From Bech32",
+                "op": "Bech32解码",
                 "args": ["Bech32m", "HRP: Hex"]
             }
         ],
@@ -498,7 +498,7 @@ TestRegister.addTests([
         expectedOutput: "split: c5f38b70305f519bf66d85fb6cf03058f3dde463ecd7918f2dc743918f2d",
         recipeConfig: [
             {
-                "op": "From Bech32",
+                "op": "Bech32解码",
                 "args": ["Bech32m", "HRP: Hex"]
             }
         ],
@@ -509,8 +509,8 @@ TestRegister.addTests([
         expectedOutput: "",
         recipeConfig: [
             {
-                "op": "From Bech32",
-                "args": ["Bech32m", "Hex"]
+                "op": "Bech32解码",
+                "args": ["Bech32m", "十六进制"]
             }
         ],
     },
@@ -523,8 +523,8 @@ TestRegister.addTests([
         expectedOutput: "0014751e76e8199196d454941c45d1b3a323f1433bd6",
         recipeConfig: [
             {
-                "op": "From Bech32",
-                "args": ["Auto-detect", "Bitcoin scriptPubKey"]
+                "op": "Bech32解码",
+                "args": ["自动检测", "Bitcoin scriptPubKey"]
             }
         ],
     },
@@ -534,8 +534,8 @@ TestRegister.addTests([
         expectedOutput: "00201863143c14c5166804bd19203356da136c985678cd4d27a1b8c6329604903262",
         recipeConfig: [
             {
-                "op": "From Bech32",
-                "args": ["Auto-detect", "Bitcoin scriptPubKey"]
+                "op": "Bech32解码",
+                "args": ["自动检测", "Bitcoin scriptPubKey"]
             }
         ],
     },
@@ -545,8 +545,8 @@ TestRegister.addTests([
         expectedOutput: "512079be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798",
         recipeConfig: [
             {
-                "op": "From Bech32",
-                "args": ["Auto-detect", "Bitcoin scriptPubKey"]
+                "op": "Bech32解码",
+                "args": ["自动检测", "Bitcoin scriptPubKey"]
             }
         ],
     },
@@ -556,8 +556,8 @@ TestRegister.addTests([
         expectedOutput: "6002751e",
         recipeConfig: [
             {
-                "op": "From Bech32",
-                "args": ["Auto-detect", "Bitcoin scriptPubKey"]
+                "op": "Bech32解码",
+                "args": ["自动检测", "Bitcoin scriptPubKey"]
             }
         ],
     },
@@ -567,8 +567,8 @@ TestRegister.addTests([
         expectedOutput: "5210751e76e8199196d454941c45d1b3a323",
         recipeConfig: [
             {
-                "op": "From Bech32",
-                "args": ["Auto-detect", "Bitcoin scriptPubKey"]
+                "op": "Bech32解码",
+                "args": ["自动检测", "Bitcoin scriptPubKey"]
             }
         ],
     },
@@ -580,8 +580,8 @@ TestRegister.addTests([
         expectedOutput: "bc1qw508d6qejxtdg4y5r3zarvary0c5xw7kv8f3t4",
         recipeConfig: [
             {
-                "op": "To Bech32",
-                "args": ["bc", "Bech32", "Hex", "Bitcoin SegWit", 0]
+                "op": "Bech32编码",
+                "args": ["bc", "Bech32", "十六进制", "Bitcoin SegWit", 0]
             }
         ],
     },
@@ -591,8 +591,8 @@ TestRegister.addTests([
         expectedOutput: "tb1qrp33g0q5c5txsp9arysrx4k6zdkfs4nce4xj0gdcccefvpysxf3q0sl5k7",
         recipeConfig: [
             {
-                "op": "To Bech32",
-                "args": ["tb", "Bech32", "Hex", "Bitcoin SegWit", 0]
+                "op": "Bech32编码",
+                "args": ["tb", "Bech32", "十六进制", "Bitcoin SegWit", 0]
             }
         ],
     },
@@ -602,8 +602,8 @@ TestRegister.addTests([
         expectedOutput: "bc1p0xlxvlhemja6c4dqv22uapctqupfhlxm9h8z3k2e72q4k9hcz7vqzk5jj0",
         recipeConfig: [
             {
-                "op": "To Bech32",
-                "args": ["bc", "Bech32m", "Hex", "Bitcoin SegWit", 1]
+                "op": "Bech32编码",
+                "args": ["bc", "Bech32m", "十六进制", "Bitcoin SegWit", 1]
             }
         ],
     },
@@ -613,8 +613,8 @@ TestRegister.addTests([
         expectedOutput: "bc1sw50qgdz25j",
         recipeConfig: [
             {
-                "op": "To Bech32",
-                "args": ["bc", "Bech32m", "Hex", "Bitcoin SegWit", 16]
+                "op": "Bech32编码",
+                "args": ["bc", "Bech32m", "十六进制", "Bitcoin SegWit", 16]
             }
         ],
     },
@@ -626,12 +626,12 @@ TestRegister.addTests([
         expectedOutput: "The quick brown fox jumps over the lazy dog",
         recipeConfig: [
             {
-                "op": "To Bech32",
-                "args": ["test", "Bech32", "Raw bytes", "Generic", 0]
+                "op": "Bech32编码",
+                "args": ["test", "Bech32", "原始字节", "通用", 0]
             },
             {
-                "op": "From Bech32",
-                "args": ["Bech32", "Raw"]
+                "op": "Bech32解码",
+                "args": ["Bech32", "原始"]
             }
         ],
     },
@@ -641,12 +641,12 @@ TestRegister.addTests([
         expectedOutput: "The quick brown fox jumps over the lazy dog",
         recipeConfig: [
             {
-                "op": "To Bech32",
-                "args": ["test", "Bech32m", "Raw bytes", "Generic", 0]
+                "op": "Bech32编码",
+                "args": ["test", "Bech32m", "原始字节", "通用", 0]
             },
             {
-                "op": "From Bech32",
-                "args": ["Bech32m", "Raw"]
+                "op": "Bech32解码",
+                "args": ["Bech32m", "原始"]
             }
         ],
     },
@@ -656,16 +656,16 @@ TestRegister.addTests([
         expectedOutput: "0001020304050607",
         recipeConfig: [
             {
-                "op": "From Hex",
+                "op": "十六进制转字符",
                 "args": ["Auto"]
             },
             {
-                "op": "To Bech32",
-                "args": ["bc", "Bech32", "Raw bytes", "Generic", 0]
+                "op": "Bech32编码",
+                "args": ["bc", "Bech32", "原始字节", "通用", 0]
             },
             {
-                "op": "From Bech32",
-                "args": ["Bech32", "Hex"]
+                "op": "Bech32解码",
+                "args": ["Bech32", "十六进制"]
             }
         ],
     },
@@ -675,12 +675,12 @@ TestRegister.addTests([
         expectedOutput: "CyberChef Bech32 Test",
         recipeConfig: [
             {
-                "op": "To Bech32",
-                "args": ["cyberchef", "Bech32", "Raw bytes", "Generic", 0]
+                "op": "Bech32编码",
+                "args": ["cyberchef", "Bech32", "原始字节", "通用", 0]
             },
             {
-                "op": "From Bech32",
-                "args": ["Auto-detect", "Raw"]
+                "op": "Bech32解码",
+                "args": ["自动检测", "原始"]
             }
         ],
     },
@@ -690,12 +690,12 @@ TestRegister.addTests([
         expectedOutput: "CyberChef Bech32m Test",
         recipeConfig: [
             {
-                "op": "To Bech32",
-                "args": ["cyberchef", "Bech32m", "Raw bytes", "Generic", 0]
+                "op": "Bech32编码",
+                "args": ["cyberchef", "Bech32m", "原始字节", "通用", 0]
             },
             {
-                "op": "From Bech32",
-                "args": ["Auto-detect", "Raw"]
+                "op": "Bech32解码",
+                "args": ["自动检测", "原始"]
             }
         ],
     },

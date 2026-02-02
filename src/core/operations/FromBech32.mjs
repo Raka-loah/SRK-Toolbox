@@ -2,6 +2,8 @@
  * @author Medjedtxm
  * @copyright Crown Copyright 2025
  * @license Apache-2.0
+ *
+ * Modified by Raka-loah@github for zh-CN i18n
  */
 
 import Operation from "../Operation.mjs";
@@ -19,22 +21,22 @@ class FromBech32 extends Operation {
     constructor() {
         super();
 
-        this.name = "From Bech32";
+        this.name = "Bech32解码";
         this.module = "Default";
-        this.description = "Bech32 is an encoding scheme primarily used for Bitcoin SegWit addresses (BIP-0173). It uses a 32-character alphabet that excludes easily confused characters (1, b, i, o) and includes a checksum for error detection.<br><br>Bech32m (BIP-0350) is an updated version used for Bitcoin Taproot addresses.<br><br>Auto-detect will attempt Bech32 first, then Bech32m if the checksum fails.<br><br>Output format options allow you to see the Human-Readable Part (HRP) along with the decoded data.";
+        this.description = "Bech32 是一种编码方案，主要应用于比特币隔离见证地址（BIP-0173）。它采用 32 字符字母表，其中排除了易混淆的字符（1、b、i、o），并包含用于错误检测的校验和。<br><br>Bech32m（BIP-0350）是其更新版本，用于比特币 Taproot 地址。<br><br>自动检测功能会先尝试以 Bech32 格式解码，若校验和失败则尝试 Bech32m 格式。<br><br>输出格式选项允许您查看人类可读部分（HRP）及解码后的数据。";
         this.infoURL = "https://wikipedia.org/wiki/Bech32";
         this.inputType = "string";
         this.outputType = "string";
         this.args = [
             {
-                "name": "Encoding",
+                "name": "编码方式",
                 "type": "option",
-                "value": ["Auto-detect", "Bech32", "Bech32m"]
+                "value": ["自动检测", "Bech32", "Bech32m"]
             },
             {
-                "name": "Output Format",
+                "name": "输出格式",
                 "type": "option",
-                "value": ["Raw", "Hex", "Bitcoin scriptPubKey", "HRP: Hex", "JSON"]
+                "value": ["原始", "十六进制", "Bitcoin scriptPubKey", "HRP: Hex", "JSON"]
             }
         ];
         this.checks = [
@@ -42,37 +44,37 @@ class FromBech32 extends Operation {
                 // Bitcoin mainnet SegWit/Taproot addresses
                 pattern: "^bc1[qpzry9x8gf2tvdw0s3jn54khce6mua7l]{6,87}$",
                 flags: "i",
-                args: ["Auto-detect", "Hex"]
+                args: ["自动检测", "十六进制"]
             },
             {
                 // Bitcoin testnet addresses
                 pattern: "^tb1[qpzry9x8gf2tvdw0s3jn54khce6mua7l]{6,87}$",
                 flags: "i",
-                args: ["Auto-detect", "Hex"]
+                args: ["自动检测", "十六进制"]
             },
             {
                 // AGE public keys
                 pattern: "^age1[qpzry9x8gf2tvdw0s3jn54khce6mua7l]{6,87}$",
                 flags: "i",
-                args: ["Auto-detect", "HRP: Hex"]
+                args: ["自动检测", "HRP: Hex"]
             },
             {
                 // AGE secret keys
                 pattern: "^AGE-SECRET-KEY-1[QPZRY9X8GF2TVDW0S3JN54KHCE6MUA7L]{6,87}$",
                 flags: "",
-                args: ["Auto-detect", "HRP: Hex"]
+                args: ["自动检测", "HRP: Hex"]
             },
             {
                 // Litecoin mainnet addresses
                 pattern: "^ltc1[qpzry9x8gf2tvdw0s3jn54khce6mua7l]{6,87}$",
                 flags: "i",
-                args: ["Auto-detect", "Hex"]
+                args: ["自动检测", "十六进制"]
             },
             {
                 // Generic bech32 pattern
                 pattern: "^[a-z]{1,83}1[qpzry9x8gf2tvdw0s3jn54khce6mua7l]{6,}$",
                 flags: "i",
-                args: ["Auto-detect", "Hex"]
+                args: ["自动检测", "十六进制"]
             }
         ];
     }
@@ -96,10 +98,10 @@ class FromBech32 extends Operation {
 
         // Format output based on selected option
         switch (outputFormat) {
-            case "Raw":
+            case "原始":
                 return decoded.data.map(b => String.fromCharCode(b)).join("");
 
-            case "Hex":
+            case "十六进制":
                 return toHex(decoded.data, "");
 
             case "Bitcoin scriptPubKey": {

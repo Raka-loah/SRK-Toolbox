@@ -331,7 +331,7 @@ TestRegister.addTests([
         input: "[{}]",
         recipeConfig: [
             {
-                "op": "JPath expression",
+                "op": "JPath表达式",
                 "args": [
                     "$..[?(p=\"console.log(this.process.mainModule.require('child_process').execSync('id').toString())\";a=''[['constructor']][['constructor']](p);a())]",
                     "\n"

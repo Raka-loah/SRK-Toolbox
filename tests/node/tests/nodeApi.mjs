@@ -349,7 +349,7 @@ TestRegister.addApiTests([
 
     it("chef.bake: should accept operation names from Chef Website which contain forward slash", () => {
         const result = chef.bake("I'll have the test salmon", [
-            { "op": "Find / Replace",
+            { "op": "查找/替换",
                 "args": [{ "option": "Regex", "string": "test" }, "good", true, false, true, false]}
         ]);
         assert.strictEqual(result.toString(), "I'll have the good salmon");
@@ -357,7 +357,7 @@ TestRegister.addApiTests([
 
     it("chef.bake: should accept operation names from Chef Website which contain a hyphen", () => {
         const result = chef.bake("I'll have the test salmon", [
-            { "op": "Adler-32 Checksum",
+            { "op": "Adler-32校验和",
                 "args": [] }
         ]);
         assert.strictEqual(result.toString(), "6e4208f8");
@@ -365,7 +365,7 @@ TestRegister.addApiTests([
 
     it("chef.bake: should accept operation names from Chef Website which contain a period", () => {
         const result = chef.bake("30 13 02 01 05 16 0e 41 6e 79 62 6f 64 79 20 74 68 65 72 65 3f", [
-            { "op": "Parse ASN.1 hex string",
+            { "op": "解析ASN.1十六进制字符串",
                 "args": [0, 32] }
         ]);
         assert.strictEqual(result.toString(), `SEQUENCE

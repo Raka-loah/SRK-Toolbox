@@ -9,6 +9,8 @@
  */
 
 import Dish from "../../core/Dish.mjs";
+import DishError from "../../core/errors/DishError.mjs";
+import { CHR_ENC_SIMPLE_REVERSE_LOOKUP } from "../../core/lib/ChrEnc.mjs";
 import Utils from "../../core/Utils.mjs";
 import cptable from "codepage";
 import loglevelMessagePrefix from "loglevel-message-prefix";
@@ -100,7 +102,7 @@ async function bufferToStr(data) {
         try {
             str = cptable.utils.decode(data.encoding, new Uint8Array(data.buffer));
         } catch (err) {
-            str = err.message;
+            str = new DishError(`文本解码时发生错误： ${CHR_ENC_SIMPLE_REVERSE_LOOKUP[data.encoding]}: ${err.message}`).toString();
         }
     }
 

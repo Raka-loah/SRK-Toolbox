@@ -160,7 +160,7 @@ TestRegister.addTests([
         expectedOutput: "abcde",
         recipeConfig: [
             {
-                op: "From Hexdump",
+                op: "从Hexdump提取",
                 args: []
             }
         ],
